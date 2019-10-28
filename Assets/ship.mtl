@@ -1,0 +1,117 @@
+#
+## Alias OBJ Material File
+# Exported from SketchUp, (c) 2000-2012 Trimble Navigation Limited
+
+newmtl Color_002
+Ka 0.000000 0.000000 0.000000
+Kd 0.858824 0.831373 0.780392
+Ks 0.330000 0.330000 0.330000
+
+newmtl Carpet_Loop_Pattern
+Ka 0.000000 0.000000 0.000000
+Kd 0.650980 0.541176 0.349020
+Ks 0.330000 0.330000 0.330000
+map_Kd ship/Carpet_Loop_Pattern.jpg
+
+newmtl Wood_Floor_Parquet
+Ka 0.000000 0.000000 0.000000
+Kd 0.568627 0.349020 0.152941
+Ks 0.330000 0.330000 0.330000
+map_Kd ship/Wood_Floor_Parquet.jpg
+
+newmtl _Wood_Lumber_ButtJoined_1
+Ka 0.000000 0.000000 0.000000
+Kd 0.309804 0.168627 0.078431
+Ks 0.330000 0.330000 0.330000
+map_Kd ship/_Wood_Lumber_ButtJoined_1.jpg
+
+newmtl Wood_Plywood_Knots
+Ka 0.000000 0.000000 0.000000
+Kd 0.466667 0.258824 0.121569
+Ks 0.330000 0.330000 0.330000
+map_Kd ship/Wood_Plywood_Knots.jpg
+
+newmtl Wood__Floor
+Ka 0.000000 0.000000 0.000000
+Kd 0.607843 0.411765 0.239216
+Ks 0.330000 0.330000 0.330000
+map_Kd ship/Wood__Floor.jpg
+
+newmtl Wood_Bamboo_Medium
+Ka 0.000000 0.000000 0.000000
+Kd 0.427451 0.231373 0.062745
+Ks 0.330000 0.330000 0.330000
+map_Kd ship/Wood_Bamboo_Medium.jpg
+
+newmtl CoolGray6
+Ka 0.000000 0.000000 0.000000
+Kd 0.431373 0.454902 0.529412
+Ks 0.330000 0.330000 0.330000
+
+newmtl Fencing_Diamond_Mesh
+Ka 0.000000 0.000000 0.000000
+Kd 0.227451 0.223529 0.223529
+Ks 0.330000 0.330000 0.330000
+map_Kd ship/Fencing_Diamond_Mesh.png
+
+newmtl Metal_Rough
+Ka 0.000000 0.000000 0.000000
+Kd 0.568627 0.309804 0.141176
+Ks 0.330000 0.330000 0.330000
+map_Kd ship/Metal_Rough.jpg
+
+newmtl _CoolGray8_1
+Ka 0.000000 0.000000 0.000000
+Kd 0.298039 0.313725 0.364706
+Ks 0.330000 0.330000 0.330000
+
+newmtl Color_008
+Ka 0.000000 0.000000 0.000000
+Kd 0.250980 0.250980 0.250980
+Ks 0.330000 0.330000 0.330000
+
+newmtl gs1phhjo
+Ka 0.000000 0.000000 0.000000
+Kd 0.207843 0.160784 0.133333
+Ks 0.330000 0.330000 0.330000
+map_Kd ship/gs1phhjo.bmp
+
+newmtl _Wood_Lumber_ButtJoined_2
+Ka 0.000000 0.000000 0.000000
+Kd 0.498039 0.356863 0.239216
+Ks 0.330000 0.330000 0.330000
+map_Kd ship/_Wood_Lumber_ButtJoined_2.jpg
+
+newmtl _Metal_Aluminum_Anodized_1
+Ka 0.000000 0.000000 0.000000
+Kd 0.349020 0.360784 0.376471
+Ks 0.330000 0.330000 0.330000
+map_Kd ship/_Metal_Aluminum_Anodized_1.jpg
+
+newmtl Wood_Floor_Light
+Ka 0.000000 0.000000 0.000000
+Kd 0.549020 0.388235 0.219608
+Ks 0.330000 0.330000 0.330000
+map_Kd ship/Wood_Floor_Light.jpg
+
+newmtl CoolGray8
+Ka 0.000000 0.000000 0.000000
+Kd 0.160784 0.168627 0.176471
+Ks 0.330000 0.330000 0.330000
+
+newmtl Color_C02
+Ka 0.000000 0.000000 0.000000
+Kd 0.105882 0.113725 0.117647
+Ks 0.330000 0.330000 0.330000
+
+newmtl Wood_Cherry_Original
+Ka 0.000000 0.000000 0.000000
+Kd 0.788235 0.560784 0.321569
+Ks 0.330000 0.330000 0.330000
+map_Kd ship/Wood_Cherry_Original.jpg
+
+newmtl FrontColor
+Ka 0.000000 0.000000 0.000000
+Kd 1.000000 1.000000 1.000000
+Ks 0.330000 0.330000 0.330000
+
