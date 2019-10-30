@@ -1,0 +1,610 @@
+fileFormatVersion: 2
+guid: a2f79154e09436646bafea5d4474a635
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: Bip001
+    100002: Bip001 Head
+    100004: Bip001 HeadNub
+    100006: Bip001 L Calf
+    100008: Bip001 L Clavicle
+    100010: Bip001 L Finger0
+    100012: Bip001 L Finger01
+    100014: Bip001 L Finger02
+    100016: Bip001 L Finger0Nub
+    100018: Bip001 L Finger1
+    100020: Bip001 L Finger11
+    100022: Bip001 L Finger12
+    100024: Bip001 L Finger1Nub
+    100026: Bip001 L Finger2
+    100028: Bip001 L Finger21
+    100030: Bip001 L Finger22
+    100032: Bip001 L Finger2Nub
+    100034: Bip001 L Finger3
+    100036: Bip001 L Finger31
+    100038: Bip001 L Finger32
+    100040: Bip001 L Finger3Nub
+    100042: Bip001 L Finger4
+    100044: Bip001 L Finger41
+    100046: Bip001 L Finger42
+    100048: Bip001 L Finger4Nub
+    100050: Bip001 L Foot
+    100052: Bip001 L Forearm
+    100054: Bip001 L Hand
+    100056: Bip001 L Thigh
+    100058: Bip001 L Toe0
+    100060: Bip001 L Toe0Nub
+    100062: Bip001 L UpperArm
+    100064: Bip001 Neck
+    100066: Bip001 Pelvis
+    100068: Bip001 R Calf
+    100070: Bip001 R Clavicle
+    100072: Bip001 R Finger0
+    100074: Bip001 R Finger01
+    100076: Bip001 R Finger02
+    100078: Bip001 R Finger0Nub
+    100080: Bip001 R Finger1
+    100082: Bip001 R Finger11
+    100084: Bip001 R Finger12
+    100086: Bip001 R Finger1Nub
+    100088: Bip001 R Finger2
+    100090: Bip001 R Finger21
+    100092: Bip001 R Finger22
+    100094: Bip001 R Finger2Nub
+    100096: Bip001 R Finger3
+    100098: Bip001 R Finger31
+    100100: Bip001 R Finger32
+    100102: Bip001 R Finger3Nub
+    100104: Bip001 R Finger4
+    100106: Bip001 R Finger41
+    100108: Bip001 R Finger42
+    100110: Bip001 R Finger4Nub
+    100112: Bip001 R Foot
+    100114: Bip001 R Forearm
+    100116: Bip001 R Hand
+    100118: Bip001 R Thigh
+    100120: Bip001 R Toe0
+    100122: Bip001 R Toe0Nub
+    100124: Bip001 R UpperArm
+    100126: Bip001 Spine
+    100128: Bip001 Spine1
+    100130: Bip001 Spine2
+    100132: bluejay
+    100134: Box003
+    100136: Box009
+    100138: Box010
+    100140: Group#14_001
+    100142: Group#14_002
+    100144: Group#14_003
+    100146: Group#14_004
+    100148: Group#14_005
+    100150: Group#14_006
+    100152: Group#14_007
+    100154: Group#14_008
+    100156: Group#14_009
+    100158: Group#14_010
+    100160: Group#14_011
+    100162: Group#14_012
+    100164: Group#14_013
+    100166: Group#14_014
+    100168: Group#14_015
+    100170: Group#14_016
+    100172: Group#14_017
+    100174: Group#14_018
+    100176: Group#14_019
+    100178: Group#14_020
+    100180: Group#14_021
+    100182: Group#14_022
+    100184: Group#14_023
+    100186: Group#14_024
+    100188: Group#14_025
+    100190: Group#20_001
+    100192: Group#20_002
+    100194: Group003
+    100196: Group_014
+    100198: Group_015
+    100200: Group_016
+    100202: Group_017
+    100204: Group_018
+    100206: Group_019
+    100208: Group_020
+    100210: Group_021
+    100212: Group_022
+    100214: Group_023
+    100216: Group_024
+    100218: Group_025
+    100220: Group_027
+    100222: Group_028
+    100224: Group_029
+    100226: Group_030
+    100228: Group_031
+    100230: Group_032
+    100232: Group_033
+    100234: Group_034
+    100236: Group_035
+    100238: Group_036
+    100240: Group_037
+    100242: Group_038
+    100244: Group_039
+    100246: Group_040
+    100248: Group_041
+    100250: Line001
+    100252: //RootNode
+    100254: Mesh
+    100256: Object001
+    100258: Object002
+    100260: Object003
+    100262: Plane001
+    100264: Plane003
+    100266: Plane004
+    100268: Plane005
+    100270: Plane006
+    100272: Plane007
+    100274: Plane009
+    100276: Plane010
+    100278: Plane011
+    100280: Plane012
+    100282: Plane013
+    100284: Plane014
+    100286: Plane015
+    100288: Plane016
+    100290: Plane017
+    100292: Plane018
+    100294: Plane019
+    100296: Plane021
+    100298: Plane022
+    100300: Plane023
+    100302: Plane024
+    100304: Plane025
+    100306: Plane026
+    100308: Plane027
+    100310: Plane040
+    100312: Plane041
+    100314: SK_Dual_Blade_Tech
+    400000: Bip001
+    400002: Bip001 Head
+    400004: Bip001 HeadNub
+    400006: Bip001 L Calf
+    400008: Bip001 L Clavicle
+    400010: Bip001 L Finger0
+    400012: Bip001 L Finger01
+    400014: Bip001 L Finger02
+    400016: Bip001 L Finger0Nub
+    400018: Bip001 L Finger1
+    400020: Bip001 L Finger11
+    400022: Bip001 L Finger12
+    400024: Bip001 L Finger1Nub
+    400026: Bip001 L Finger2
+    400028: Bip001 L Finger21
+    400030: Bip001 L Finger22
+    400032: Bip001 L Finger2Nub
+    400034: Bip001 L Finger3
+    400036: Bip001 L Finger31
+    400038: Bip001 L Finger32
+    400040: Bip001 L Finger3Nub
+    400042: Bip001 L Finger4
+    400044: Bip001 L Finger41
+    400046: Bip001 L Finger42
+    400048: Bip001 L Finger4Nub
+    400050: Bip001 L Foot
+    400052: Bip001 L Forearm
+    400054: Bip001 L Hand
+    400056: Bip001 L Thigh
+    400058: Bip001 L Toe0
+    400060: Bip001 L Toe0Nub
+    400062: Bip001 L UpperArm
+    400064: Bip001 Neck
+    400066: Bip001 Pelvis
+    400068: Bip001 R Calf
+    400070: Bip001 R Clavicle
+    400072: Bip001 R Finger0
+    400074: Bip001 R Finger01
+    400076: Bip001 R Finger02
+    400078: Bip001 R Finger0Nub
+    400080: Bip001 R Finger1
+    400082: Bip001 R Finger11
+    400084: Bip001 R Finger12
+    400086: Bip001 R Finger1Nub
+    400088: Bip001 R Finger2
+    400090: Bip001 R Finger21
+    400092: Bip001 R Finger22
+    400094: Bip001 R Finger2Nub
+    400096: Bip001 R Finger3
+    400098: Bip001 R Finger31
+    400100: Bip001 R Finger32
+    400102: Bip001 R Finger3Nub
+    400104: Bip001 R Finger4
+    400106: Bip001 R Finger41
+    400108: Bip001 R Finger42
+    400110: Bip001 R Finger4Nub
+    400112: Bip001 R Foot
+    400114: Bip001 R Forearm
+    400116: Bip001 R Hand
+    400118: Bip001 R Thigh
+    400120: Bip001 R Toe0
+    400122: Bip001 R Toe0Nub
+    400124: Bip001 R UpperArm
+    400126: Bip001 Spine
+    400128: Bip001 Spine1
+    400130: Bip001 Spine2
+    400132: bluejay
+    400134: Box003
+    400136: Box009
+    400138: Box010
+    400140: Group#14_001
+    400142: Group#14_002
+    400144: Group#14_003
+    400146: Group#14_004
+    400148: Group#14_005
+    400150: Group#14_006
+    400152: Group#14_007
+    400154: Group#14_008
+    400156: Group#14_009
+    400158: Group#14_010
+    400160: Group#14_011
+    400162: Group#14_012
+    400164: Group#14_013
+    400166: Group#14_014
+    400168: Group#14_015
+    400170: Group#14_016
+    400172: Group#14_017
+    400174: Group#14_018
+    400176: Group#14_019
+    400178: Group#14_020
+    400180: Group#14_021
+    400182: Group#14_022
+    400184: Group#14_023
+    400186: Group#14_024
+    400188: Group#14_025
+    400190: Group#20_001
+    400192: Group#20_002
+    400194: Group003
+    400196: Group_014
+    400198: Group_015
+    400200: Group_016
+    400202: Group_017
+    400204: Group_018
+    400206: Group_019
+    400208: Group_020
+    400210: Group_021
+    400212: Group_022
+    400214: Group_023
+    400216: Group_024
+    400218: Group_025
+    400220: Group_027
+    400222: Group_028
+    400224: Group_029
+    400226: Group_030
+    400228: Group_031
+    400230: Group_032
+    400232: Group_033
+    400234: Group_034
+    400236: Group_035
+    400238: Group_036
+    400240: Group_037
+    400242: Group_038
+    400244: Group_039
+    400246: Group_040
+    400248: Group_041
+    400250: Line001
+    400252: //RootNode
+    400254: Mesh
+    400256: Object001
+    400258: Object002
+    400260: Object003
+    400262: Plane001
+    400264: Plane003
+    400266: Plane004
+    400268: Plane005
+    400270: Plane006
+    400272: Plane007
+    400274: Plane009
+    400276: Plane010
+    400278: Plane011
+    400280: Plane012
+    400282: Plane013
+    400284: Plane014
+    400286: Plane015
+    400288: Plane016
+    400290: Plane017
+    400292: Plane018
+    400294: Plane019
+    400296: Plane021
+    400298: Plane022
+    400300: Plane023
+    400302: Plane024
+    400304: Plane025
+    400306: Plane026
+    400308: Plane027
+    400310: Plane040
+    400312: Plane041
+    400314: SK_Dual_Blade_Tech
+    2100000: SpacePirate_M
+    2100002: 'Material #25'
+    2100004: 'Material #68'
+    2100006: 'Material #65'
+    2100008: 'Material #63'
+    2100010: 'Material #64'
+    2100012: 'Material #1322'
+    2100014: 'Material #1294'
+    2100016: 'Material #39'
+    2100018: 'Material #62'
+    2100020: 'Material #1282'
+    2300000: bluejay
+    2300002: Box003
+    2300004: Box009
+    2300006: Box010
+    2300008: Object003
+    2300010: Plane001
+    2300012: Plane040
+    2300014: Plane041
+    2300016: SK_Dual_Blade_Tech
+    3300000: bluejay
+    3300002: Box003
+    3300004: Box009
+    3300006: Box010
+    3300008: Object003
+    3300010: Plane001
+    3300012: Plane040
+    3300014: Plane041
+    3300016: SK_Dual_Blade_Tech
+    4300000: Mesh
+    4300002: Line001
+    4300004: Object001
+    4300006: Plane011
+    4300008: Plane013
+    4300010: Plane014
+    4300012: Plane015
+    4300014: Plane026
+    4300016: Plane017
+    4300018: Plane018
+    4300020: Plane019
+    4300022: Plane021
+    4300024: Plane022
+    4300026: Plane023
+    4300028: Plane024
+    4300030: Plane025
+    4300032: Plane027
+    4300034: Object002
+    4300036: Plane001
+    4300038: Box009
+    4300040: Plane041
+    4300042: Plane040
+    4300044: Object003
+    4300046: SK_Dual_Blade_Tech
+    4300048: bluejay
+    4300050: Box010
+    4300052: Box003
+    4300054: Plane004
+    4300056: Plane006
+    4300058: Plane005
+    4300060: Plane012
+    4300062: Plane016
+    4300064: Plane009
+    4300066: Plane010
+    4300068: Plane007
+    4300070: Plane003
+    4300072: Group_040
+    4300074: Group_039
+    4300076: Group#14_019
+    4300078: Group#14_006
+    4300080: Group#14_020
+    4300082: Group#20_002
+    4300084: Group#14_001
+    4300086: Group_020
+    4300088: Group#14_004
+    4300090: Group#14_009
+    4300092: Group_028
+    4300094: Group#14_023
+    4300096: Group#14_010
+    4300098: Group_018
+    4300100: Group#14_015
+    4300102: Group_022
+    4300104: Group_035
+    4300106: Group#14_014
+    4300108: Group#14_018
+    4300110: Group#14_007
+    4300112: Group_024
+    4300114: Group_029
+    4300116: Group_015
+    4300118: Group#14_017
+    4300120: Group#14_012
+    4300122: Group_030
+    4300124: Group#14_013
+    4300126: Group_014
+    4300128: Group_017
+    4300130: Group_025
+    4300132: Group#14_002
+    4300134: Group#14_008
+    4300136: Group#14_024
+    4300138: Group#20_001
+    4300140: Group_036
+    4300142: Group_038
+    4300144: Group#14_011
+    4300146: Group_032
+    4300148: Group_033
+    4300150: Group_023
+    4300152: Group_016
+    4300154: Group_019
+    4300156: Group_021
+    4300158: Group#14_003
+    4300160: Group_027
+    4300162: Group_031
+    4300164: Group_037
+    4300166: Group#14_022
+    4300168: Group#14_005
+    4300170: Group_034
+    4300172: Group#14_025
+    4300174: Group_041
+    4300176: Group#14_016
+    4300178: Group#14_021
+    7400000: Take 001
+    9500000: //RootNode
+    13700000: Group#14_001
+    13700002: Group#14_002
+    13700004: Group#14_003
+    13700006: Group#14_004
+    13700008: Group#14_005
+    13700010: Group#14_006
+    13700012: Group#14_007
+    13700014: Group#14_008
+    13700016: Group#14_009
+    13700018: Group#14_010
+    13700020: Group#14_011
+    13700022: Group#14_012
+    13700024: Group#14_013
+    13700026: Group#14_014
+    13700028: Group#14_015
+    13700030: Group#14_016
+    13700032: Group#14_017
+    13700034: Group#14_018
+    13700036: Group#14_019
+    13700038: Group#14_020
+    13700040: Group#14_021
+    13700042: Group#14_022
+    13700044: Group#14_023
+    13700046: Group#14_024
+    13700048: Group#14_025
+    13700050: Group#20_001
+    13700052: Group#20_002
+    13700054: Group_014
+    13700056: Group_015
+    13700058: Group_016
+    13700060: Group_017
+    13700062: Group_018
+    13700064: Group_019
+    13700066: Group_020
+    13700068: Group_021
+    13700070: Group_022
+    13700072: Group_023
+    13700074: Group_024
+    13700076: Group_025
+    13700078: Group_027
+    13700080: Group_028
+    13700082: Group_029
+    13700084: Group_030
+    13700086: Group_031
+    13700088: Group_032
+    13700090: Group_033
+    13700092: Group_034
+    13700094: Group_035
+    13700096: Group_036
+    13700098: Group_037
+    13700100: Group_038
+    13700102: Group_039
+    13700104: Group_040
+    13700106: Group_041
+    13700108: Line001
+    13700110: Mesh
+    13700112: Object001
+    13700114: Object002
+    13700116: Plane003
+    13700118: Plane004
+    13700120: Plane005
+    13700122: Plane006
+    13700124: Plane007
+    13700126: Plane009
+    13700128: Plane010
+    13700130: Plane011
+    13700132: Plane012
+    13700134: Plane013
+    13700136: Plane014
+    13700138: Plane015
+    13700140: Plane016
+    13700142: Plane017
+    13700144: Plane018
+    13700146: Plane019
+    13700148: Plane021
+    13700150: Plane022
+    13700152: Plane023
+    13700154: Plane024
+    13700156: Plane025
+    13700158: Plane026
+    13700160: Plane027
+    2186277476908879412: ImportLogs
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 0.0254
+    hasPreviousCalculatedGlobalScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
