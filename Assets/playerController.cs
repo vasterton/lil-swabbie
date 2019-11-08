@@ -22,12 +22,14 @@ public class playerController : MonoBehaviour
             
             if(Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hit, 100)){
                 player.destination = hit.point;
+                GetComponent<Animator>().SetBool("walking", true);
             }
         }
 
         // Stop moving when destination has been reached
         if(player.remainingDistance < player.stoppingDistance){
             player.ResetPath();
+            GetComponent<Animator>().SetBool("walking", false);
         }
 
         // Follow player with camera (to be replaced with fixed cameras)
