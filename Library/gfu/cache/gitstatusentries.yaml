@@ -13,37 +13,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cacheType: 6
-  lastUpdatedAtString: 2019-11-07T16:55:57.538-05:00
-  initializedAtString: 2019-11-07T16:29:56.532-05:00
+  lastUpdatedAtString: 2019-11-08T19:14:39.310-05:00
+  initializedAtString: 2019-11-08T19:14:36.423-05:00
   entries:
-  - path: Assembly-CSharp.csproj
+  - path: Assets\pirates\lil-swabbie\14052_Pirate_Shipmate_Muscular_v1_L3.obj.meta
     fullPath: C:\Users\evanmiller\Desktop\School\Fall 2019\Computer Graphics\Group
-      Project\lil-swabbie\Assembly-CSharp.csproj
-    projectPath: Assembly-CSharp.csproj
+      Project\lil-swabbie\Assets\pirates\lil-swabbie\14052_Pirate_Shipmate_Muscular_v1_L3.obj.meta
+    projectPath: Assets\pirates\lil-swabbie\14052_Pirate_Shipmate_Muscular_v1_L3.obj.meta
     originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
+    indexStatus: 0
+    workTreeStatus: 3
   - path: Assets\playerController.cs
     fullPath: C:\Users\evanmiller\Desktop\School\Fall 2019\Computer Graphics\Group
       Project\lil-swabbie\Assets\playerController.cs
     projectPath: Assets\playerController.cs
     originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: Assets\playerController.cs.meta
-    fullPath: C:\Users\evanmiller\Desktop\School\Fall 2019\Computer Graphics\Group
-      Project\lil-swabbie\Assets\playerController.cs.meta
-    projectPath: Assets\playerController.cs.meta
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: Assets\Scenes\SampleScene.meta
-    fullPath: C:\Users\evanmiller\Desktop\School\Fall 2019\Computer Graphics\Group
-      Project\lil-swabbie\Assets\Scenes\SampleScene.meta
-    projectPath: Assets\Scenes\SampleScene.meta
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
+    indexStatus: 0
+    workTreeStatus: 3
   - path: Assets\Scenes\SampleScene.unity
     fullPath: C:\Users\evanmiller\Desktop\School\Fall 2019\Computer Graphics\Group
       Project\lil-swabbie\Assets\Scenes\SampleScene.unity
@@ -51,20 +37,6 @@ MonoBehaviour:
     originalPath: 
     indexStatus: 0
     workTreeStatus: 3
-  - path: Assets\Scenes\SampleScene\NavMesh.asset
-    fullPath: C:\Users\evanmiller\Desktop\School\Fall 2019\Computer Graphics\Group
-      Project\lil-swabbie\Assets\Scenes\SampleScene\NavMesh.asset
-    projectPath: Assets\Scenes\SampleScene\NavMesh.asset
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: Assets\Scenes\SampleScene\NavMesh.asset.meta
-    fullPath: C:\Users\evanmiller\Desktop\School\Fall 2019\Computer Graphics\Group
-      Project\lil-swabbie\Assets\Scenes\SampleScene\NavMesh.asset.meta
-    projectPath: Assets\Scenes\SampleScene\NavMesh.asset.meta
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
   - path: Library\assetDatabase3
     fullPath: C:\Users\evanmiller\Desktop\School\Fall 2019\Computer Graphics\Group
       Project\lil-swabbie\Library\assetDatabase3
@@ -72,20 +44,20 @@ MonoBehaviour:
     originalPath: 
     indexStatus: 0
     workTreeStatus: 3
-  - path: Library\CrashedAssetImports.txt
+  - path: Library\CurrentLayout.dwlt
     fullPath: C:\Users\evanmiller\Desktop\School\Fall 2019\Computer Graphics\Group
-      Project\lil-swabbie\Library\CrashedAssetImports.txt
-    projectPath: Library\CrashedAssetImports.txt
+      Project\lil-swabbie\Library\CurrentLayout.dwlt
+    projectPath: Library\CurrentLayout.dwlt
     originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: Library\EditorInstance.json
+    indexStatus: 0
+    workTreeStatus: 3
+  - path: Library\expandedItems
     fullPath: C:\Users\evanmiller\Desktop\School\Fall 2019\Computer Graphics\Group
-      Project\lil-swabbie\Library\EditorInstance.json
-    projectPath: Library\EditorInstance.json
+      Project\lil-swabbie\Library\expandedItems
+    projectPath: Library\expandedItems
     originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
+    indexStatus: 0
+    workTreeStatus: 3
   - path: Library\gfu\cache\gitlocks.yaml
     fullPath: C:\Users\evanmiller\Desktop\School\Fall 2019\Computer Graphics\Group
       Project\lil-swabbie\Library\gfu\cache\gitlocks.yaml
@@ -114,34 +86,139 @@ MonoBehaviour:
     originalPath: 
     indexStatus: 0
     workTreeStatus: 3
-  - path: Library\metadata\51\51f91f84492910944aa2854dedc67f97
+  - path: Library\InspectorExpandedItems.asset
     fullPath: C:\Users\evanmiller\Desktop\School\Fall 2019\Computer Graphics\Group
-      Project\lil-swabbie\Library\metadata\51\51f91f84492910944aa2854dedc67f97
-    projectPath: Library\metadata\51\51f91f84492910944aa2854dedc67f97
+      Project\lil-swabbie\Library\InspectorExpandedItems.asset
+    projectPath: Library\InspectorExpandedItems.asset
     originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: Library\metadata\51\51f91f84492910944aa2854dedc67f97.info
+    indexStatus: 0
+    workTreeStatus: 3
+  - path: Library\metadata\0e\0ebf6fcb382584740ad22b75792ed9aa
     fullPath: C:\Users\evanmiller\Desktop\School\Fall 2019\Computer Graphics\Group
-      Project\lil-swabbie\Library\metadata\51\51f91f84492910944aa2854dedc67f97.info
-    projectPath: Library\metadata\51\51f91f84492910944aa2854dedc67f97.info
+      Project\lil-swabbie\Library\metadata\0e\0ebf6fcb382584740ad22b75792ed9aa
+    projectPath: Library\metadata\0e\0ebf6fcb382584740ad22b75792ed9aa
     originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: Library\metadata\61\61c4ef0ec744ca245bb1e1e6a654e521
+    indexStatus: 0
+    workTreeStatus: 5
+  - path: Library\metadata\0e\0ebf6fcb382584740ad22b75792ed9aa.info
     fullPath: C:\Users\evanmiller\Desktop\School\Fall 2019\Computer Graphics\Group
-      Project\lil-swabbie\Library\metadata\61\61c4ef0ec744ca245bb1e1e6a654e521
-    projectPath: Library\metadata\61\61c4ef0ec744ca245bb1e1e6a654e521
+      Project\lil-swabbie\Library\metadata\0e\0ebf6fcb382584740ad22b75792ed9aa.info
+    projectPath: Library\metadata\0e\0ebf6fcb382584740ad22b75792ed9aa.info
     originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: Library\metadata\61\61c4ef0ec744ca245bb1e1e6a654e521.info
+    indexStatus: 0
+    workTreeStatus: 5
+  - path: Library\metadata\11\11d09e3ac6334f24b88eee219d2ba6a7
     fullPath: C:\Users\evanmiller\Desktop\School\Fall 2019\Computer Graphics\Group
-      Project\lil-swabbie\Library\metadata\61\61c4ef0ec744ca245bb1e1e6a654e521.info
-    projectPath: Library\metadata\61\61c4ef0ec744ca245bb1e1e6a654e521.info
+      Project\lil-swabbie\Library\metadata\11\11d09e3ac6334f24b88eee219d2ba6a7
+    projectPath: Library\metadata\11\11d09e3ac6334f24b88eee219d2ba6a7
     originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
+    indexStatus: 0
+    workTreeStatus: 5
+  - path: Library\metadata\11\11d09e3ac6334f24b88eee219d2ba6a7.info
+    fullPath: C:\Users\evanmiller\Desktop\School\Fall 2019\Computer Graphics\Group
+      Project\lil-swabbie\Library\metadata\11\11d09e3ac6334f24b88eee219d2ba6a7.info
+    projectPath: Library\metadata\11\11d09e3ac6334f24b88eee219d2ba6a7.info
+    originalPath: 
+    indexStatus: 0
+    workTreeStatus: 5
+  - path: Library\metadata\13\13668e780b5ce9145bfdeb871489efbe
+    fullPath: C:\Users\evanmiller\Desktop\School\Fall 2019\Computer Graphics\Group
+      Project\lil-swabbie\Library\metadata\13\13668e780b5ce9145bfdeb871489efbe
+    projectPath: Library\metadata\13\13668e780b5ce9145bfdeb871489efbe
+    originalPath: 
+    indexStatus: 0
+    workTreeStatus: 5
+  - path: Library\metadata\13\13668e780b5ce9145bfdeb871489efbe.info
+    fullPath: C:\Users\evanmiller\Desktop\School\Fall 2019\Computer Graphics\Group
+      Project\lil-swabbie\Library\metadata\13\13668e780b5ce9145bfdeb871489efbe.info
+    projectPath: Library\metadata\13\13668e780b5ce9145bfdeb871489efbe.info
+    originalPath: 
+    indexStatus: 0
+    workTreeStatus: 5
+  - path: Library\metadata\1c\1ce378983304a644ab18b274744fe13d
+    fullPath: C:\Users\evanmiller\Desktop\School\Fall 2019\Computer Graphics\Group
+      Project\lil-swabbie\Library\metadata\1c\1ce378983304a644ab18b274744fe13d
+    projectPath: Library\metadata\1c\1ce378983304a644ab18b274744fe13d
+    originalPath: 
+    indexStatus: 0
+    workTreeStatus: 5
+  - path: Library\metadata\1c\1ce378983304a644ab18b274744fe13d.info
+    fullPath: C:\Users\evanmiller\Desktop\School\Fall 2019\Computer Graphics\Group
+      Project\lil-swabbie\Library\metadata\1c\1ce378983304a644ab18b274744fe13d.info
+    projectPath: Library\metadata\1c\1ce378983304a644ab18b274744fe13d.info
+    originalPath: 
+    indexStatus: 0
+    workTreeStatus: 5
+  - path: Library\metadata\35\35a62773a98dffb4fb0bc5d20b1ed6ef
+    fullPath: C:\Users\evanmiller\Desktop\School\Fall 2019\Computer Graphics\Group
+      Project\lil-swabbie\Library\metadata\35\35a62773a98dffb4fb0bc5d20b1ed6ef
+    projectPath: Library\metadata\35\35a62773a98dffb4fb0bc5d20b1ed6ef
+    originalPath: 
+    indexStatus: 0
+    workTreeStatus: 5
+  - path: Library\metadata\35\35a62773a98dffb4fb0bc5d20b1ed6ef.info
+    fullPath: C:\Users\evanmiller\Desktop\School\Fall 2019\Computer Graphics\Group
+      Project\lil-swabbie\Library\metadata\35\35a62773a98dffb4fb0bc5d20b1ed6ef.info
+    projectPath: Library\metadata\35\35a62773a98dffb4fb0bc5d20b1ed6ef.info
+    originalPath: 
+    indexStatus: 0
+    workTreeStatus: 5
+  - path: Library\metadata\3a\3a8602135dfff4942859b78c9446c203
+    fullPath: C:\Users\evanmiller\Desktop\School\Fall 2019\Computer Graphics\Group
+      Project\lil-swabbie\Library\metadata\3a\3a8602135dfff4942859b78c9446c203
+    projectPath: Library\metadata\3a\3a8602135dfff4942859b78c9446c203
+    originalPath: 
+    indexStatus: 0
+    workTreeStatus: 5
+  - path: Library\metadata\3a\3a8602135dfff4942859b78c9446c203.info
+    fullPath: C:\Users\evanmiller\Desktop\School\Fall 2019\Computer Graphics\Group
+      Project\lil-swabbie\Library\metadata\3a\3a8602135dfff4942859b78c9446c203.info
+    projectPath: Library\metadata\3a\3a8602135dfff4942859b78c9446c203.info
+    originalPath: 
+    indexStatus: 0
+    workTreeStatus: 5
+  - path: Library\metadata\3c\3cbbef45af7e71143bb171e7f25cee59
+    fullPath: C:\Users\evanmiller\Desktop\School\Fall 2019\Computer Graphics\Group
+      Project\lil-swabbie\Library\metadata\3c\3cbbef45af7e71143bb171e7f25cee59
+    projectPath: Library\metadata\3c\3cbbef45af7e71143bb171e7f25cee59
+    originalPath: 
+    indexStatus: 0
+    workTreeStatus: 5
+  - path: Library\metadata\3c\3cbbef45af7e71143bb171e7f25cee59.info
+    fullPath: C:\Users\evanmiller\Desktop\School\Fall 2019\Computer Graphics\Group
+      Project\lil-swabbie\Library\metadata\3c\3cbbef45af7e71143bb171e7f25cee59.info
+    projectPath: Library\metadata\3c\3cbbef45af7e71143bb171e7f25cee59.info
+    originalPath: 
+    indexStatus: 0
+    workTreeStatus: 5
+  - path: Library\metadata\41\41d0cac93887c1e46b34d1ee6759da57
+    fullPath: C:\Users\evanmiller\Desktop\School\Fall 2019\Computer Graphics\Group
+      Project\lil-swabbie\Library\metadata\41\41d0cac93887c1e46b34d1ee6759da57
+    projectPath: Library\metadata\41\41d0cac93887c1e46b34d1ee6759da57
+    originalPath: 
+    indexStatus: 0
+    workTreeStatus: 5
+  - path: Library\metadata\41\41d0cac93887c1e46b34d1ee6759da57.info
+    fullPath: C:\Users\evanmiller\Desktop\School\Fall 2019\Computer Graphics\Group
+      Project\lil-swabbie\Library\metadata\41\41d0cac93887c1e46b34d1ee6759da57.info
+    projectPath: Library\metadata\41\41d0cac93887c1e46b34d1ee6759da57.info
+    originalPath: 
+    indexStatus: 0
+    workTreeStatus: 5
+  - path: Library\metadata\66\6650f0e4001e81240aea96b05a6217af
+    fullPath: C:\Users\evanmiller\Desktop\School\Fall 2019\Computer Graphics\Group
+      Project\lil-swabbie\Library\metadata\66\6650f0e4001e81240aea96b05a6217af
+    projectPath: Library\metadata\66\6650f0e4001e81240aea96b05a6217af
+    originalPath: 
+    indexStatus: 0
+    workTreeStatus: 5
+  - path: Library\metadata\66\6650f0e4001e81240aea96b05a6217af.info
+    fullPath: C:\Users\evanmiller\Desktop\School\Fall 2019\Computer Graphics\Group
+      Project\lil-swabbie\Library\metadata\66\6650f0e4001e81240aea96b05a6217af.info
+    projectPath: Library\metadata\66\6650f0e4001e81240aea96b05a6217af.info
+    originalPath: 
+    indexStatus: 0
+    workTreeStatus: 5
   - path: Library\metadata\73\7350b65a6431f604a8496c39db1ac9c5.info
     fullPath: C:\Users\evanmiller\Desktop\School\Fall 2019\Computer Graphics\Group
       Project\lil-swabbie\Library\metadata\73\7350b65a6431f604a8496c39db1ac9c5.info
@@ -149,34 +226,258 @@ MonoBehaviour:
     originalPath: 
     indexStatus: 0
     workTreeStatus: 3
+  - path: Library\metadata\75\75201de0949631d41a94da1ebe37d7e3
+    fullPath: C:\Users\evanmiller\Desktop\School\Fall 2019\Computer Graphics\Group
+      Project\lil-swabbie\Library\metadata\75\75201de0949631d41a94da1ebe37d7e3
+    projectPath: Library\metadata\75\75201de0949631d41a94da1ebe37d7e3
+    originalPath: 
+    indexStatus: 0
+    workTreeStatus: 5
+  - path: Library\metadata\75\75201de0949631d41a94da1ebe37d7e3.info
+    fullPath: C:\Users\evanmiller\Desktop\School\Fall 2019\Computer Graphics\Group
+      Project\lil-swabbie\Library\metadata\75\75201de0949631d41a94da1ebe37d7e3.info
+    projectPath: Library\metadata\75\75201de0949631d41a94da1ebe37d7e3.info
+    originalPath: 
+    indexStatus: 0
+    workTreeStatus: 5
+  - path: Library\metadata\84\84ad3f4bd69835046a47c263933bda9c
+    fullPath: C:\Users\evanmiller\Desktop\School\Fall 2019\Computer Graphics\Group
+      Project\lil-swabbie\Library\metadata\84\84ad3f4bd69835046a47c263933bda9c
+    projectPath: Library\metadata\84\84ad3f4bd69835046a47c263933bda9c
+    originalPath: 
+    indexStatus: 0
+    workTreeStatus: 5
+  - path: Library\metadata\84\84ad3f4bd69835046a47c263933bda9c.info
+    fullPath: C:\Users\evanmiller\Desktop\School\Fall 2019\Computer Graphics\Group
+      Project\lil-swabbie\Library\metadata\84\84ad3f4bd69835046a47c263933bda9c.info
+    projectPath: Library\metadata\84\84ad3f4bd69835046a47c263933bda9c.info
+    originalPath: 
+    indexStatus: 0
+    workTreeStatus: 5
+  - path: Library\metadata\88\887494e503de52846be1a16c54a3c9d7
+    fullPath: C:\Users\evanmiller\Desktop\School\Fall 2019\Computer Graphics\Group
+      Project\lil-swabbie\Library\metadata\88\887494e503de52846be1a16c54a3c9d7
+    projectPath: Library\metadata\88\887494e503de52846be1a16c54a3c9d7
+    originalPath: 
+    indexStatus: 0
+    workTreeStatus: 5
+  - path: Library\metadata\88\887494e503de52846be1a16c54a3c9d7.info
+    fullPath: C:\Users\evanmiller\Desktop\School\Fall 2019\Computer Graphics\Group
+      Project\lil-swabbie\Library\metadata\88\887494e503de52846be1a16c54a3c9d7.info
+    projectPath: Library\metadata\88\887494e503de52846be1a16c54a3c9d7.info
+    originalPath: 
+    indexStatus: 0
+    workTreeStatus: 5
+  - path: Library\metadata\8a\8a80b060435111140aecd1b93fc78ef0
+    fullPath: C:\Users\evanmiller\Desktop\School\Fall 2019\Computer Graphics\Group
+      Project\lil-swabbie\Library\metadata\8a\8a80b060435111140aecd1b93fc78ef0
+    projectPath: Library\metadata\8a\8a80b060435111140aecd1b93fc78ef0
+    originalPath: 
+    indexStatus: 0
+    workTreeStatus: 5
+  - path: Library\metadata\8a\8a80b060435111140aecd1b93fc78ef0.info
+    fullPath: C:\Users\evanmiller\Desktop\School\Fall 2019\Computer Graphics\Group
+      Project\lil-swabbie\Library\metadata\8a\8a80b060435111140aecd1b93fc78ef0.info
+    projectPath: Library\metadata\8a\8a80b060435111140aecd1b93fc78ef0.info
+    originalPath: 
+    indexStatus: 0
+    workTreeStatus: 5
+  - path: Library\metadata\92\92e5758151176d2438532014e632962d
+    fullPath: C:\Users\evanmiller\Desktop\School\Fall 2019\Computer Graphics\Group
+      Project\lil-swabbie\Library\metadata\92\92e5758151176d2438532014e632962d
+    projectPath: Library\metadata\92\92e5758151176d2438532014e632962d
+    originalPath: 
+    indexStatus: 0
+    workTreeStatus: 5
+  - path: Library\metadata\92\92e5758151176d2438532014e632962d.info
+    fullPath: C:\Users\evanmiller\Desktop\School\Fall 2019\Computer Graphics\Group
+      Project\lil-swabbie\Library\metadata\92\92e5758151176d2438532014e632962d.info
+    projectPath: Library\metadata\92\92e5758151176d2438532014e632962d.info
+    originalPath: 
+    indexStatus: 0
+    workTreeStatus: 5
+  - path: Library\metadata\a0\a0bac54c4244b254d8f207ce17ce2165
+    fullPath: C:\Users\evanmiller\Desktop\School\Fall 2019\Computer Graphics\Group
+      Project\lil-swabbie\Library\metadata\a0\a0bac54c4244b254d8f207ce17ce2165
+    projectPath: Library\metadata\a0\a0bac54c4244b254d8f207ce17ce2165
+    originalPath: 
+    indexStatus: 0
+    workTreeStatus: 5
+  - path: Library\metadata\a0\a0bac54c4244b254d8f207ce17ce2165.info
+    fullPath: C:\Users\evanmiller\Desktop\School\Fall 2019\Computer Graphics\Group
+      Project\lil-swabbie\Library\metadata\a0\a0bac54c4244b254d8f207ce17ce2165.info
+    projectPath: Library\metadata\a0\a0bac54c4244b254d8f207ce17ce2165.info
+    originalPath: 
+    indexStatus: 0
+    workTreeStatus: 5
+  - path: Library\metadata\a2\a2f79154e09436646bafea5d4474a635
+    fullPath: C:\Users\evanmiller\Desktop\School\Fall 2019\Computer Graphics\Group
+      Project\lil-swabbie\Library\metadata\a2\a2f79154e09436646bafea5d4474a635
+    projectPath: Library\metadata\a2\a2f79154e09436646bafea5d4474a635
+    originalPath: 
+    indexStatus: 0
+    workTreeStatus: 5
+  - path: Library\metadata\a2\a2f79154e09436646bafea5d4474a635.info
+    fullPath: C:\Users\evanmiller\Desktop\School\Fall 2019\Computer Graphics\Group
+      Project\lil-swabbie\Library\metadata\a2\a2f79154e09436646bafea5d4474a635.info
+    projectPath: Library\metadata\a2\a2f79154e09436646bafea5d4474a635.info
+    originalPath: 
+    indexStatus: 0
+    workTreeStatus: 5
+  - path: Library\metadata\a5\a55885d6aded6ff4f8829eb9268a187c
+    fullPath: C:\Users\evanmiller\Desktop\School\Fall 2019\Computer Graphics\Group
+      Project\lil-swabbie\Library\metadata\a5\a55885d6aded6ff4f8829eb9268a187c
+    projectPath: Library\metadata\a5\a55885d6aded6ff4f8829eb9268a187c
+    originalPath: 
+    indexStatus: 0
+    workTreeStatus: 5
+  - path: Library\metadata\a5\a55885d6aded6ff4f8829eb9268a187c.info
+    fullPath: C:\Users\evanmiller\Desktop\School\Fall 2019\Computer Graphics\Group
+      Project\lil-swabbie\Library\metadata\a5\a55885d6aded6ff4f8829eb9268a187c.info
+    projectPath: Library\metadata\a5\a55885d6aded6ff4f8829eb9268a187c.info
+    originalPath: 
+    indexStatus: 0
+    workTreeStatus: 5
+  - path: Library\metadata\bc\bca8c81713e80fb4ea76973fda41438e
+    fullPath: C:\Users\evanmiller\Desktop\School\Fall 2019\Computer Graphics\Group
+      Project\lil-swabbie\Library\metadata\bc\bca8c81713e80fb4ea76973fda41438e
+    projectPath: Library\metadata\bc\bca8c81713e80fb4ea76973fda41438e
+    originalPath: 
+    indexStatus: 0
+    workTreeStatus: 5
+  - path: Library\metadata\bc\bca8c81713e80fb4ea76973fda41438e.info
+    fullPath: C:\Users\evanmiller\Desktop\School\Fall 2019\Computer Graphics\Group
+      Project\lil-swabbie\Library\metadata\bc\bca8c81713e80fb4ea76973fda41438e.info
+    projectPath: Library\metadata\bc\bca8c81713e80fb4ea76973fda41438e.info
+    originalPath: 
+    indexStatus: 0
+    workTreeStatus: 5
+  - path: Library\metadata\d6\d66ba35ab57146e4d8557c267bcb1d9b
+    fullPath: C:\Users\evanmiller\Desktop\School\Fall 2019\Computer Graphics\Group
+      Project\lil-swabbie\Library\metadata\d6\d66ba35ab57146e4d8557c267bcb1d9b
+    projectPath: Library\metadata\d6\d66ba35ab57146e4d8557c267bcb1d9b
+    originalPath: 
+    indexStatus: 0
+    workTreeStatus: 5
+  - path: Library\metadata\d6\d66ba35ab57146e4d8557c267bcb1d9b.info
+    fullPath: C:\Users\evanmiller\Desktop\School\Fall 2019\Computer Graphics\Group
+      Project\lil-swabbie\Library\metadata\d6\d66ba35ab57146e4d8557c267bcb1d9b.info
+    projectPath: Library\metadata\d6\d66ba35ab57146e4d8557c267bcb1d9b.info
+    originalPath: 
+    indexStatus: 0
+    workTreeStatus: 5
+  - path: Library\metadata\e0\e0acee7f0fdf77249bd2cb42a1956d4e
+    fullPath: C:\Users\evanmiller\Desktop\School\Fall 2019\Computer Graphics\Group
+      Project\lil-swabbie\Library\metadata\e0\e0acee7f0fdf77249bd2cb42a1956d4e
+    projectPath: Library\metadata\e0\e0acee7f0fdf77249bd2cb42a1956d4e
+    originalPath: 
+    indexStatus: 0
+    workTreeStatus: 5
+  - path: Library\metadata\e0\e0acee7f0fdf77249bd2cb42a1956d4e.info
+    fullPath: C:\Users\evanmiller\Desktop\School\Fall 2019\Computer Graphics\Group
+      Project\lil-swabbie\Library\metadata\e0\e0acee7f0fdf77249bd2cb42a1956d4e.info
+    projectPath: Library\metadata\e0\e0acee7f0fdf77249bd2cb42a1956d4e.info
+    originalPath: 
+    indexStatus: 0
+    workTreeStatus: 5
+  - path: Library\metadata\f8\f8bde7329649d9a41989a7030b910c07
+    fullPath: C:\Users\evanmiller\Desktop\School\Fall 2019\Computer Graphics\Group
+      Project\lil-swabbie\Library\metadata\f8\f8bde7329649d9a41989a7030b910c07
+    projectPath: Library\metadata\f8\f8bde7329649d9a41989a7030b910c07
+    originalPath: 
+    indexStatus: 0
+    workTreeStatus: 5
+  - path: Library\metadata\f8\f8bde7329649d9a41989a7030b910c07.info
+    fullPath: C:\Users\evanmiller\Desktop\School\Fall 2019\Computer Graphics\Group
+      Project\lil-swabbie\Library\metadata\f8\f8bde7329649d9a41989a7030b910c07.info
+    projectPath: Library\metadata\f8\f8bde7329649d9a41989a7030b910c07.info
+    originalPath: 
+    indexStatus: 0
+    workTreeStatus: 5
+  - path: Library\metadata\f9\f97c1c6db6918d14ba128f7b53f85bd1
+    fullPath: C:\Users\evanmiller\Desktop\School\Fall 2019\Computer Graphics\Group
+      Project\lil-swabbie\Library\metadata\f9\f97c1c6db6918d14ba128f7b53f85bd1
+    projectPath: Library\metadata\f9\f97c1c6db6918d14ba128f7b53f85bd1
+    originalPath: 
+    indexStatus: 0
+    workTreeStatus: 5
+  - path: Library\metadata\f9\f97c1c6db6918d14ba128f7b53f85bd1.info
+    fullPath: C:\Users\evanmiller\Desktop\School\Fall 2019\Computer Graphics\Group
+      Project\lil-swabbie\Library\metadata\f9\f97c1c6db6918d14ba128f7b53f85bd1.info
+    projectPath: Library\metadata\f9\f97c1c6db6918d14ba128f7b53f85bd1.info
+    originalPath: 
+    indexStatus: 0
+    workTreeStatus: 5
   - path: Library\metadata\fc\fcfbb95bad19f9049884933468c15ffa
     fullPath: C:\Users\evanmiller\Desktop\School\Fall 2019\Computer Graphics\Group
       Project\lil-swabbie\Library\metadata\fc\fcfbb95bad19f9049884933468c15ffa
     projectPath: Library\metadata\fc\fcfbb95bad19f9049884933468c15ffa
     originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: Library\metadata\fc\fcfbb95bad19f9049884933468c15ffa.info
-    fullPath: C:\Users\evanmiller\Desktop\School\Fall 2019\Computer Graphics\Group
-      Project\lil-swabbie\Library\metadata\fc\fcfbb95bad19f9049884933468c15ffa.info
-    projectPath: Library\metadata\fc\fcfbb95bad19f9049884933468c15ffa.info
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
+    indexStatus: 0
+    workTreeStatus: 3
   - path: Library\ScriptAssemblies\Assembly-CSharp.dll
     fullPath: C:\Users\evanmiller\Desktop\School\Fall 2019\Computer Graphics\Group
       Project\lil-swabbie\Library\ScriptAssemblies\Assembly-CSharp.dll
     projectPath: Library\ScriptAssemblies\Assembly-CSharp.dll
     originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
+    indexStatus: 0
+    workTreeStatus: 3
   - path: Library\ScriptAssemblies\Assembly-CSharp.pdb
     fullPath: C:\Users\evanmiller\Desktop\School\Fall 2019\Computer Graphics\Group
       Project\lil-swabbie\Library\ScriptAssemblies\Assembly-CSharp.pdb
     projectPath: Library\ScriptAssemblies\Assembly-CSharp.pdb
     originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
+    indexStatus: 0
+    workTreeStatus: 3
+  - path: Library\ScriptAssemblies\Assembly-CSharp-Editor-firstpass.dll
+    fullPath: C:\Users\evanmiller\Desktop\School\Fall 2019\Computer Graphics\Group
+      Project\lil-swabbie\Library\ScriptAssemblies\Assembly-CSharp-Editor-firstpass.dll
+    projectPath: Library\ScriptAssemblies\Assembly-CSharp-Editor-firstpass.dll
+    originalPath: 
+    indexStatus: 0
+    workTreeStatus: 3
+  - path: Library\ScriptAssemblies\Assembly-CSharp-firstpass.dll
+    fullPath: C:\Users\evanmiller\Desktop\School\Fall 2019\Computer Graphics\Group
+      Project\lil-swabbie\Library\ScriptAssemblies\Assembly-CSharp-firstpass.dll
+    projectPath: Library\ScriptAssemblies\Assembly-CSharp-firstpass.dll
+    originalPath: 
+    indexStatus: 0
+    workTreeStatus: 3
+  - path: Library\ScriptAssemblies\Unity.Analytics.DataPrivacy.dll
+    fullPath: C:\Users\evanmiller\Desktop\School\Fall 2019\Computer Graphics\Group
+      Project\lil-swabbie\Library\ScriptAssemblies\Unity.Analytics.DataPrivacy.dll
+    projectPath: Library\ScriptAssemblies\Unity.Analytics.DataPrivacy.dll
+    originalPath: 
+    indexStatus: 0
+    workTreeStatus: 3
+  - path: Library\ScriptAssemblies\Unity.CollabProxy.Editor.dll
+    fullPath: C:\Users\evanmiller\Desktop\School\Fall 2019\Computer Graphics\Group
+      Project\lil-swabbie\Library\ScriptAssemblies\Unity.CollabProxy.Editor.dll
+    projectPath: Library\ScriptAssemblies\Unity.CollabProxy.Editor.dll
+    originalPath: 
+    indexStatus: 0
+    workTreeStatus: 3
+  - path: Library\ScriptAssemblies\Unity.PackageManagerUI.Editor.dll
+    fullPath: C:\Users\evanmiller\Desktop\School\Fall 2019\Computer Graphics\Group
+      Project\lil-swabbie\Library\ScriptAssemblies\Unity.PackageManagerUI.Editor.dll
+    projectPath: Library\ScriptAssemblies\Unity.PackageManagerUI.Editor.dll
+    originalPath: 
+    indexStatus: 0
+    workTreeStatus: 3
+  - path: Library\ScriptAssemblies\Unity.TextMeshPro.dll
+    fullPath: C:\Users\evanmiller\Desktop\School\Fall 2019\Computer Graphics\Group
+      Project\lil-swabbie\Library\ScriptAssemblies\Unity.TextMeshPro.dll
+    projectPath: Library\ScriptAssemblies\Unity.TextMeshPro.dll
+    originalPath: 
+    indexStatus: 0
+    workTreeStatus: 3
+  - path: Library\ScriptAssemblies\Unity.TextMeshPro.Editor.dll
+    fullPath: C:\Users\evanmiller\Desktop\School\Fall 2019\Computer Graphics\Group
+      Project\lil-swabbie\Library\ScriptAssemblies\Unity.TextMeshPro.Editor.dll
+    projectPath: Library\ScriptAssemblies\Unity.TextMeshPro.Editor.dll
+    originalPath: 
+    indexStatus: 0
+    workTreeStatus: 3
   - path: Library\shadercompiler-UnityShaderCompiler.exe0.log
     fullPath: C:\Users\evanmiller\Desktop\School\Fall 2019\Computer Graphics\Group
       Project\lil-swabbie\Library\shadercompiler-UnityShaderCompiler.exe0.log
@@ -198,122 +499,24 @@ MonoBehaviour:
     originalPath: 
     indexStatus: 0
     workTreeStatus: 3
-  - path: lil-swabbie.sln
+  - path: ProjectSettings\DynamicsManager.asset
     fullPath: C:\Users\evanmiller\Desktop\School\Fall 2019\Computer Graphics\Group
-      Project\lil-swabbie\lil-swabbie.sln
-    projectPath: lil-swabbie.sln
+      Project\lil-swabbie\ProjectSettings\DynamicsManager.asset
+    projectPath: ProjectSettings\DynamicsManager.asset
     originalPath: 
     indexStatus: 0
     workTreeStatus: 3
-  - path: obj\Debug\Assembly-CSharp-Editor-firstpass.csprojAssemblyReference.cache
+  - path: ProjectSettings\QualitySettings.asset
     fullPath: C:\Users\evanmiller\Desktop\School\Fall 2019\Computer Graphics\Group
-      Project\lil-swabbie\obj\Debug\Assembly-CSharp-Editor-firstpass.csprojAssemblyReference.cache
-    projectPath: obj\Debug\Assembly-CSharp-Editor-firstpass.csprojAssemblyReference.cache
+      Project\lil-swabbie\ProjectSettings\QualitySettings.asset
+    projectPath: ProjectSettings\QualitySettings.asset
     originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: obj\Debug\Assembly-CSharp-firstpass.csprojAssemblyReference.cache
+    indexStatus: 0
+    workTreeStatus: 3
+  - path: ProjectSettings\TagManager.asset
     fullPath: C:\Users\evanmiller\Desktop\School\Fall 2019\Computer Graphics\Group
-      Project\lil-swabbie\obj\Debug\Assembly-CSharp-firstpass.csprojAssemblyReference.cache
-    projectPath: obj\Debug\Assembly-CSharp-firstpass.csprojAssemblyReference.cache
+      Project\lil-swabbie\ProjectSettings\TagManager.asset
+    projectPath: ProjectSettings\TagManager.asset
     originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: Temp\__Backupscenes\0.backup
-    fullPath: C:\Users\evanmiller\Desktop\School\Fall 2019\Computer Graphics\Group
-      Project\lil-swabbie\Temp\__Backupscenes\0.backup
-    projectPath: Temp\__Backupscenes\0.backup
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: Temp\ProcessJobs\5f836afd411440893fb47a6c8572da3c.bakert
-    fullPath: C:\Users\evanmiller\Desktop\School\Fall 2019\Computer Graphics\Group
-      Project\lil-swabbie\Temp\ProcessJobs\5f836afd411440893fb47a6c8572da3c.bakert
-    projectPath: Temp\ProcessJobs\5f836afd411440893fb47a6c8572da3c.bakert
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: Temp\UnityLockfile
-    fullPath: C:\Users\evanmiller\Desktop\School\Fall 2019\Computer Graphics\Group
-      Project\lil-swabbie\Temp\UnityLockfile
-    projectPath: Temp\UnityLockfile
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: Temp\UnityTempFile-1bdf9746a4c365a44b6cfefb892e75a9
-    fullPath: C:\Users\evanmiller\Desktop\School\Fall 2019\Computer Graphics\Group
-      Project\lil-swabbie\Temp\UnityTempFile-1bdf9746a4c365a44b6cfefb892e75a9
-    projectPath: Temp\UnityTempFile-1bdf9746a4c365a44b6cfefb892e75a9
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: Temp\UnityTempFile-1ea472d593c6c344d8a96516a056d819
-    fullPath: C:\Users\evanmiller\Desktop\School\Fall 2019\Computer Graphics\Group
-      Project\lil-swabbie\Temp\UnityTempFile-1ea472d593c6c344d8a96516a056d819
-    projectPath: Temp\UnityTempFile-1ea472d593c6c344d8a96516a056d819
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: Temp\UnityTempFile-283c4b60289940f4ca9fcc0707ef2a4c
-    fullPath: C:\Users\evanmiller\Desktop\School\Fall 2019\Computer Graphics\Group
-      Project\lil-swabbie\Temp\UnityTempFile-283c4b60289940f4ca9fcc0707ef2a4c
-    projectPath: Temp\UnityTempFile-283c4b60289940f4ca9fcc0707ef2a4c
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: Temp\UnityTempFile-31e1eeb9990e94c4c9dae0a7450ddb44
-    fullPath: C:\Users\evanmiller\Desktop\School\Fall 2019\Computer Graphics\Group
-      Project\lil-swabbie\Temp\UnityTempFile-31e1eeb9990e94c4c9dae0a7450ddb44
-    projectPath: Temp\UnityTempFile-31e1eeb9990e94c4c9dae0a7450ddb44
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: Temp\UnityTempFile-60dad08d3d1241b4ba90b43ce827147b
-    fullPath: C:\Users\evanmiller\Desktop\School\Fall 2019\Computer Graphics\Group
-      Project\lil-swabbie\Temp\UnityTempFile-60dad08d3d1241b4ba90b43ce827147b
-    projectPath: Temp\UnityTempFile-60dad08d3d1241b4ba90b43ce827147b
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: Temp\UnityTempFile-691a7df5536b4694abc353311add2d54
-    fullPath: C:\Users\evanmiller\Desktop\School\Fall 2019\Computer Graphics\Group
-      Project\lil-swabbie\Temp\UnityTempFile-691a7df5536b4694abc353311add2d54
-    projectPath: Temp\UnityTempFile-691a7df5536b4694abc353311add2d54
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: Temp\UnityTempFile-8ba8c4c0d661a00479497a572fd63db3
-    fullPath: C:\Users\evanmiller\Desktop\School\Fall 2019\Computer Graphics\Group
-      Project\lil-swabbie\Temp\UnityTempFile-8ba8c4c0d661a00479497a572fd63db3
-    projectPath: Temp\UnityTempFile-8ba8c4c0d661a00479497a572fd63db3
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: Temp\UnityTempFile-9a8cc985a0b9052458c0576eff98e25e
-    fullPath: C:\Users\evanmiller\Desktop\School\Fall 2019\Computer Graphics\Group
-      Project\lil-swabbie\Temp\UnityTempFile-9a8cc985a0b9052458c0576eff98e25e
-    projectPath: Temp\UnityTempFile-9a8cc985a0b9052458c0576eff98e25e
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: Temp\UnityTempFile-a413fe0bb34233f468c1ea4250951f58
-    fullPath: C:\Users\evanmiller\Desktop\School\Fall 2019\Computer Graphics\Group
-      Project\lil-swabbie\Temp\UnityTempFile-a413fe0bb34233f468c1ea4250951f58
-    projectPath: Temp\UnityTempFile-a413fe0bb34233f468c1ea4250951f58
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: Temp\UnityTempFile-a5f2fdce0b0cf9248a8108bb2b665924
-    fullPath: C:\Users\evanmiller\Desktop\School\Fall 2019\Computer Graphics\Group
-      Project\lil-swabbie\Temp\UnityTempFile-a5f2fdce0b0cf9248a8108bb2b665924
-    projectPath: Temp\UnityTempFile-a5f2fdce0b0cf9248a8108bb2b665924
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
-  - path: Temp\UnityTempFile-b69ab509192db7348a0a6606cc900b02
-    fullPath: C:\Users\evanmiller\Desktop\School\Fall 2019\Computer Graphics\Group
-      Project\lil-swabbie\Temp\UnityTempFile-b69ab509192db7348a0a6606cc900b02
-    projectPath: Temp\UnityTempFile-b69ab509192db7348a0a6606cc900b02
-    originalPath: 
-    indexStatus: 1
-    workTreeStatus: 1
+    indexStatus: 0
+    workTreeStatus: 3
