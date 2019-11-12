@@ -21,9 +21,10 @@ public class playerController : MonoBehaviour
         // Set destination to wherever user clicks
         if(Input.GetKeyDown(KeyCode.Mouse0)){
             RaycastHit hit;
+            NavMeshHit meshHit;
             
-            if(Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hit, 100) && hit.transform.CompareTag("deck")){
-                player.destination = hit.point;
+            if(Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hit, 100) && NavMesh.SamplePosition(hit.point, out meshHit, .5f, NavMesh.AllAreas)){
+                player.destination = meshHit.position;
             }
         }
 
@@ -36,6 +37,7 @@ public class playerController : MonoBehaviour
         animator.SetBool("walking", player.velocity.magnitude > 0.2f);
     }
 
+    // Change camera position when lil swabbie moves to a different area of the ship
     void OnTriggerEnter(Collider other){
         if(other.CompareTag("upperDeck")){
             Camera.main.transform.SetPositionAndRotation(new Vector3(-8.17f, 11.41f, -21.76f), Quaternion.Euler(new Vector3(20, 0, 0)));
