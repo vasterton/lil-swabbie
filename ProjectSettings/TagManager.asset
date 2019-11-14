@@ -12,6 +12,20 @@ TagManager:
   - lowerDeck
   - lowerDeckFront
   - galley
+  - fish
+  - fishHeld
+  - fishText
+  - ingredientText
+  - cookMinigameText
+  - cheese
+  - cheeseHeld
+  - cheeseText
+  - bread
+  - breadHeld
+  - breadText
+  - fishReturned
+  - cheeseReturned
+  - breadReturned
   layers:
   - Default
   - TransparentFX
