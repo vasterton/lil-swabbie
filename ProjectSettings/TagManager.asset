@@ -26,6 +26,16 @@ TagManager:
   - fishReturned
   - cheeseReturned
   - breadReturned
+  - title
+  - startButton
+  - controlsButton
+  - controls
+  - backButton
+  - titleText
+  - controlsButtonText
+  - startButtonText
+  - backButtonText
+  - controlsText
   layers:
   - Default
   - TransparentFX
