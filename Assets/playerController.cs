@@ -7,6 +7,7 @@ using UnityEngine.UI;
 public class playerController : MonoBehaviour
 {
     NavMeshAgent player;
+    bool gameover = false;
     bool cookGameStarted = false;
     bool fishHeld = false;
     bool fishReturned = false;
@@ -37,12 +38,31 @@ public class playerController : MonoBehaviour
         }
 
         // Stop moving when destination has been reached
+        //fix this when merged
+        if (!gameover){
         if(player.remainingDistance < player.stoppingDistance){
-            player.ResetPath();
+                player.ResetPath();
+        }
         }
 
         // Enable or disable walking animation based on magnitude of velocity
         animator.SetBool("walking", player.velocity.magnitude > 0.2f);
+
+        //good ending - if enough points
+        if (Input.GetKeyDown(KeyCode.Alpha1))
+        {
+            StartCoroutine(loadWin());
+        }
+        //bad ending - if lacking points
+        if (Input.GetKeyDown(KeyCode.Alpha3))
+        {
+            StartCoroutine(loadLoose());
+        }
+        //do we need a normal ending?
+        if(gameover && Input.GetKeyDown(KeyCode.Return))
+        {
+            //go to title screen
+        }
 
         // Press E to interact
         if(Input.GetKeyDown(KeyCode.E)){
@@ -196,4 +216,69 @@ public class playerController : MonoBehaviour
             GameObject.FindGameObjectWithTag("breadText").GetComponent<Text>().enabled = false;
         }
     }
+
+    private IEnumerator loadWin()
+    {
+        //show animate out animation - uncomment these once merged with shipGame
+        //GameObject.FindWithTag("loading").GetComponent<Animator>().SetBool("animateOut", true);
+        yield return new WaitForSeconds(1f);
+        //GameObject.FindWithTag("loading").GetComponent<Animator>().SetBool("animateOut", false);
+        
+        //this = lil-swabbie
+        this.GetComponent<NavMeshAgent>().enabled = false;
+        this.transform.SetPositionAndRotation(new Vector3(-38.2f,3.83f,-12.78f), Quaternion.Euler(new Vector3(0, -115, 0)));
+        this.GetComponent<Animator>().SetBool("win",true);
+        GameObject pirate = GameObject.FindGameObjectWithTag("forced");
+        pirate.transform.SetPositionAndRotation(new Vector3(-37.9f ,3.8f,-10.3f), Quaternion.Euler(new Vector3(0, 210.5f, 0)));
+        pirate.GetComponent<Animator>().SetBool("win", true);
+        pirate = GameObject.FindGameObjectWithTag("osilly");
+        pirate.transform.SetPositionAndRotation(new Vector3(-36,3.2f,-10.4f), Quaternion.Euler(new Vector3(0,-130.6f,0)));
+        pirate.GetComponent<Animator>().SetBool("win", true);
+        pirate = GameObject.FindGameObjectWithTag("katarina");
+        pirate.transform.SetPositionAndRotation(new Vector3(-36.74f,5.57f,-9.8f), Quaternion.Euler(new Vector3(20.5f,205,-2)));
+        pirate.GetComponent<Animator>().SetBool("win", true);
+        pirate = GameObject.FindGameObjectWithTag("kaspar");
+        pirate.transform.SetPositionAndRotation(new Vector3(-33.3f,3.5f,-10.8f), Quaternion.Euler(new Vector3(0, -123.8f, 0)));
+        pirate.GetComponent<Animator>().SetBool("win", true);
+        pirate = GameObject.FindGameObjectWithTag("chongus");
+        pirate.transform.SetPositionAndRotation(new Vector3(-33.7f,3.5f,-12.8f), Quaternion.Euler(new Vector3(0, -101, 0)));
+        pirate.GetComponent<Animator>().SetBool("win", true);
+        pirate = GameObject.FindGameObjectWithTag("mario");
+        pirate.transform.SetPositionAndRotation(new Vector3(-35.3f,3.5f,-14), Quaternion.Euler(new Vector3(0, 268.5f, 0)));
+        pirate.GetComponent<Animator>().SetBool("win", true);
+
+        Camera.main.transform.SetPositionAndRotation(new Vector3(-40.8f, 6.6f, -13.9f), Quaternion.Euler(new Vector3(17.1f, 67, 0)));
+        gameover = true;
+    }
+
+    private IEnumerator loadLoose()
+    {
+        //show animate out animation - uncomment these once merged with shipGame
+        //GameObject.FindWithTag("loading").GetComponent<Animator>().SetBool("animateOut", true);
+        yield return new WaitForSeconds(1f);
+        //GameObject.FindWithTag("loading").GetComponent<Animator>().SetBool("animateOut", false);
+
+        //this = lil-swabbie
+        this.GetComponent<NavMeshAgent>().enabled = false;
+        this.transform.SetPositionAndRotation(new Vector3(-49.6f,4.9f,-12), Quaternion.Euler(new Vector3(0, -168.4f, 0)));
+        this.GetComponent<Animator>().SetBool("lose", true);
+        GameObject pirate = GameObject.FindGameObjectWithTag("forced");
+        pirate.transform.SetPositionAndRotation(new Vector3(-36.1f,3.8f,-9.9f), Quaternion.Euler(new Vector3(0, 210.5f, 0)));
+        pirate = GameObject.FindGameObjectWithTag("osilly");
+        pirate.transform.SetPositionAndRotation(new Vector3(-46.6f,5,-12), Quaternion.Euler(new Vector3(0, -101.6f, 0)));
+        //set some sort of animation
+        pirate = GameObject.FindGameObjectWithTag("katarina");
+        pirate.transform.SetPositionAndRotation(new Vector3(-47.2f,7.2f,-11.3f), Quaternion.Euler(new Vector3(-5.4f, 233, 0.7f)));
+        pirate = GameObject.FindGameObjectWithTag("kaspar");
+        pirate.transform.SetPositionAndRotation(new Vector3(-32.2f, 2.8f, -13.5f), Quaternion.Euler(new Vector3(0, -102.5f, 0)));
+        pirate = GameObject.FindGameObjectWithTag("chongus");
+        pirate.transform.SetPositionAndRotation(new Vector3(-43.7f,4.6f,-12.4f), Quaternion.Euler(new Vector3(0, -104, 0)));
+        //set his "no" animation?
+        pirate = GameObject.FindGameObjectWithTag("mario");
+        pirate.transform.SetPositionAndRotation(new Vector3(-40.4f,4.2f,-12.8f), Quaternion.Euler(new Vector3(0, 268.5f, 0)));
+
+        Camera.main.transform.SetPositionAndRotation(new Vector3(-52.3f,7.9f,-13.9f), Quaternion.Euler(new Vector3(6.7f, 79, 0)));
+        gameover = true;
+    }
 }
+
