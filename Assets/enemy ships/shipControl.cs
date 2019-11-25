@@ -37,6 +37,6 @@ public class shipControl : MonoBehaviour
     private IEnumerator shot()
     {
         yield return new WaitForSeconds(3f);
-        Destroy(this.gameObject);
+        this.gameObject.SetActive(false);
     }
 }

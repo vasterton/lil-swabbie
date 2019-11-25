@@ -196,7 +196,7 @@ public class playerController : MonoBehaviour
             {
                 StartCoroutine(loadMainGame());
                 GetComponent<Animator>().SetBool("playingShipGame", false);
-                Destroy(arrow);
+                arrow.SetActive(false);
             }
         }
     }
