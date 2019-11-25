@@ -70,7 +70,7 @@ public class playerController : MonoBehaviour
         //do we need a normal ending?
         if(gameover && Input.GetKeyDown(KeyCode.Return))
         {
-            //go to title screen
+            SceneManager.LoadScene(0);
         }
 
         // Press E to interact
