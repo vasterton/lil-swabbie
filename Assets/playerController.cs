@@ -1,12 +1,15 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class playerController : MonoBehaviour
 {
     NavMeshAgent player;
+    GameObject arrow;
     bool cookGameStarted = false;
     bool fishHeld = false;
     bool fishReturned = false;
@@ -14,11 +17,20 @@ public class playerController : MonoBehaviour
     bool cheeseReturned = false;
     bool breadHeld = false;
     bool breadReturned = false;
+    bool playingShipGame = false;
+    int cannonballs = 0;
+    bool attacking = false;
+    public GameObject s0;
+    public GameObject s1;
+    public GameObject s2;
+    public GameObject s3;
+    public GameObject s4;
 
     // Start is called before the first frame update
     void Start()
     {
         player = GetComponent<NavMeshAgent>();
+        arrow = GameObject.FindGameObjectWithTag("arrow");
     }
 
     // Update is called once per frame
@@ -27,7 +39,7 @@ public class playerController : MonoBehaviour
         Animator animator = this.GetComponent<Animator>();
 
         // Set destination to wherever user clicks
-        if(Input.GetKeyDown(KeyCode.Mouse0)){
+        if(Input.GetKeyDown(KeyCode.Mouse0) && !playingShipGame){
             RaycastHit hit;
             NavMeshHit meshHit;
             
@@ -37,7 +49,7 @@ public class playerController : MonoBehaviour
         }
 
         // Stop moving when destination has been reached
-        if(player.remainingDistance < player.stoppingDistance){
+        if(!playingShipGame && player.remainingDistance < player.stoppingDistance){
             player.ResetPath();
         }
 
@@ -134,31 +146,83 @@ public class playerController : MonoBehaviour
                 }
             }
         }
+
+        //starts the Ship Game if space is pressed. Change this once interactions are implemented
+        if (Input.GetKeyDown(KeyCode.Space) && !playingShipGame)
+        {
+            playingShipGame = true;
+            cannonballs = 5;
+            player.ResetPath();
+            StartCoroutine(loadShipGame());
+            GetComponent<Animator>().SetBool("playingShipGame", true);
+        }
+
+        if (playingShipGame && cannonballs >= 0)
+        {
+            if (Input.GetKeyDown(KeyCode.Return) && !attacking)
+            {
+                StartCoroutine(fireCannon());
+            }
+            if (Input.GetKey(KeyCode.RightArrow) && !attacking)
+            {
+                //move camera and crosshair
+                Camera.main.transform.RotateAround(this.transform.position, Vector3.up, 0.5f);
+                arrow.transform.Rotate(0,0,-0.5f);
+            }
+            if (Input.GetKey(KeyCode.LeftArrow) && !attacking)
+            {
+                //move camera and crosshair
+                Camera.main.transform.RotateAround(this.transform.position, -Vector3.up, 0.5f);
+                arrow.transform.Rotate(0, 0, 0.5f);
+
+            }
+            if (Input.GetKey(KeyCode.UpArrow) && !attacking)
+            {
+                //move crosshair
+                if (arrow.transform.localScale.x < 200)
+                {
+                    arrow.GetComponent<Transform>().localScale += new Vector3(0.8f, 0, 0);
+                }
+            }
+            if (Input.GetKey(KeyCode.DownArrow) && !attacking)
+            {
+                //move crosshair
+                if(arrow.transform.localScale.x > 25)
+                {
+                    arrow.transform.localScale += new Vector3(-0.8f, 0, 0);
+                }
+            }
+            if (cannonballs == 0 && !attacking)
+            {
+                StartCoroutine(loadMainGame());
+                GetComponent<Animator>().SetBool("playingShipGame", false);
+                arrow.SetActive(false);
+            }
+        }
     }
 
-    
     void OnTriggerEnter(Collider other){
         // Change camera position when lil swabbie moves to a different area of the ship
         if(other.CompareTag("upperDeck")){
-            Camera.main.transform.SetPositionAndRotation(new Vector3(-8.17f, 11.41f, -21.76f), Quaternion.Euler(new Vector3(20, 0, 0)));
+            moveCamera(-8.17f, 11.41f, -21.76f, 20, 0, 0);
         }
         else if(other.CompareTag("captainsQuarters")){
-            Camera.main.transform.SetPositionAndRotation(new Vector3(-12.51f, 5.42f, -14.33f), Quaternion.Euler(new Vector3(10, 20, 0)));
+            moveCamera(-12.51f, 5.42f, -14.33f,10, 20, 0);
         }
         else if(other.CompareTag("mainDeck")){
-            Camera.main.transform.SetPositionAndRotation(new Vector3(-24, 10.31f, -23.8f), Quaternion.Euler(new Vector3(20, 15, 0)));
+            moveCamera(-24, 10.31f, -23.8f,20, 15, 0);
         }
         else if(other.CompareTag("mainDeckFront")){
-            Camera.main.transform.SetPositionAndRotation(new Vector3(-41.36f, 10.31f, -22.53f), Quaternion.Euler(new Vector3(20, 20, 0)));
+            moveCamera(-41.36f, 10.31f, -22.53f,20, 20, 0);
         }
         else if(other.CompareTag("lowerDeck")){
-            Camera.main.transform.SetPositionAndRotation(new Vector3(-25.11f, 2.63f, -16.06f), Quaternion.Euler(new Vector3(10, 25, 0)));
+            moveCamera(-25.11f, 2.63f, -16.06f,10, 25, 0);
         }
         else if(other.CompareTag("lowerDeckFront")){
-            Camera.main.transform.SetPositionAndRotation(new Vector3(-26.3f, 2.65f, -16.03f), Quaternion.Euler(new Vector3(10, -25, 0)));
+            moveCamera(-26.3f, 2.65f, -16.03f,10, -25, 0);
         }
         else if(other.CompareTag("galley")){
-            Camera.main.transform.SetPositionAndRotation(new Vector3(-12, 2.5f, -15.71f), Quaternion.Euler(new Vector3(10, 20, 0)));
+            moveCamera(-12, 2.5f, -15.71f,10, 20, 0);
 
             if(!cookGameStarted){
                 GameObject.FindGameObjectWithTag("cookMinigameText").GetComponent<Text>().enabled = true;
@@ -181,6 +245,12 @@ public class playerController : MonoBehaviour
         }
     }
 
+    private void moveCamera(float v1, float v2, float v3, float v4, float v5, float v6)
+    {
+        //if we have time, it would be nice to have a smooth transition of the camera
+        Camera.main.transform.SetPositionAndRotation(new Vector3(v1, v2, v3), Quaternion.Euler(new Vector3(v4, v5, v6)));
+    }
+
     // Hide text when lil swabbie leaves certain areas
     void OnTriggerExit(Collider other){
         if(other.CompareTag("galley")){
@@ -195,5 +265,66 @@ public class playerController : MonoBehaviour
         else if(other.CompareTag("bread")){
             GameObject.FindGameObjectWithTag("breadText").GetComponent<Text>().enabled = false;
         }
+    }
+
+    private IEnumerator loadShipGame()
+    {
+        //show animate out animation
+        GameObject.FindWithTag("loading").GetComponent<Animator>().SetBool("animateOut", true);
+        yield return new WaitForSeconds(1f);
+        GameObject.FindWithTag("loading").GetComponent<Animator>().SetBool("animateOut", false);
+        this.GetComponent<NavMeshAgent>().enabled = false;
+        this.GetComponent<Transform>().position = new Vector3(-20.4f, 30.3f, -12f);
+        this.GetComponent<Transform>().rotation = Quaternion.Euler(new Vector3(0, -90, 0));
+        Camera.main.transform.SetPositionAndRotation(new Vector3(-17.2f, 34f, -12f), Quaternion.Euler(new Vector3(26.5f, -90, 0)));
+    }
+    private IEnumerator loadMainGame()
+    {
+        //show animate out animation
+        GameObject.FindWithTag("loading").GetComponent<Animator>().SetBool("animateOut", true);
+        yield return new WaitForSeconds(1f);
+        playingShipGame = false;
+        GameObject.FindWithTag("loading").GetComponent<Animator>().SetBool("animateOut", false);
+        this.GetComponent<Transform>().position = new Vector3(-29.52219f, 3.624516f, -14.07293f);
+        this.GetComponent<Transform>().rotation = Quaternion.Euler(new Vector3(0, -238.542f, 0));
+        this.GetComponent<NavMeshAgent>().enabled = true;
+        Camera.main.transform.SetPositionAndRotation(new Vector3(-24, 10.31f, -23.8f), Quaternion.Euler(new Vector3(20, 15, 0)));
+    }
+    private IEnumerator fireCannon()
+    {
+        attacking = true;
+        GetComponent<Animator>().SetBool("attack", true);
+        yield return new WaitForSeconds(3f);
+        GetComponent<Animator>().SetBool("attack", false);
+
+        if (s0.GetComponent<Animator>().GetBool("targeted"))
+        {
+            s0.GetComponent<Animator>().SetBool("shot", true);
+            //earn points here
+        }
+        if (s1.GetComponent<Animator>().GetBool("targeted"))
+        {
+            s1.GetComponent<Animator>().SetBool("shot", true);
+            //earn points here
+        }
+        if (s2.GetComponent<Animator>().GetBool("targeted"))
+        {
+            s2.GetComponent<Animator>().SetBool("shot", true);
+            //earn points here
+        }
+        if (s3.GetComponent<Animator>().GetBool("targeted"))
+        {
+            s3.GetComponent<Animator>().SetBool("shot", true);
+            //earn points here
+        }
+        if (s4.GetComponent<Animator>().GetBool("targeted"))
+        {
+            s4.GetComponent<Animator>().SetBool("shot", true);
+            //earn points here
+        }
+        cannonballs--;
+
+        yield return new WaitForSeconds(2f);
+        attacking = false;
     }
 }
