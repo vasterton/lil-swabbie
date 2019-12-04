@@ -1,30 +1,30 @@
-Captain
-  State 1
-  “Welcome to my ship, The Intrepid!”
-    “Glad to be aboard!”
-      “We need enthusiasm like that!” +2 pts
-    “...”
-      “...”
-    “Whatever.”
-      “It is an honor to serve on my ship!” -2 pts
-   “You will be assisting the crew members with some tasks… But I have another important job for you. My first mate, Bonnie, has disappeared! She was going to replace me as captain one day and now she’s gone. Please find out what happened to her if you can.”
-      “Will do!”
-        “Good swabbie.” +2 pts
-      “I’ll think about it.”
-        “That’s an order, swabbie…” -2 pts
-  Finished: “Now go! Help out your superiors with tasks and make sure to ask questions, but don’t be too suspicious!” (Once a chat state is completed, give alternative concise dialogue popup with no options other than to exit chat).
+Captain:
+- “Welcome to my ship, The Intrepid!”
+  > “Glad to be aboard!”
+    - “We need enthusiasm like that!” +2 pts
+  > “...”
+    - “...”
+  > “Whatever.”
+    - “It is an honor to serve on my ship!” -2 pts
+- “You will be assisting the crew members with some tasks.”
+  > “Will do!”
+    - “Good swabbie.” +2 pts
+  > “I’ll think about it.”
+    - “That’s an order, swabbie…” -2 pts
+- “Now go! Help out your superiors with tasks.”
+
 Mario
-  State 1
-    “Hey there. You must be the new swabbie.”
-      “That’s me!”
-        “Good.” +1 pt
-      “...”
-        “I’m speaking to you…” -2 pts
-    “Anyways, how about you train to shoot cannons, huh?”
-      Cannon minigame (win/lose) [Aim and click in the direction of the incoming ships to stop them.]
+- “Hey there. You must be the new swabbie.”
+  > “That’s me!”
+    - “Good.” +1 pt
+  > “...”
+    - “I’m speaking to you…” -2 pts
+- “Anyways, how about you train to shoot cannons, huh?”
+  Cannon minigame (win/lose) [Aim and click in the direction of the incoming ships to stop them.]
         “Good shot!” +3 pts
         “Mmm, needs work.”  -3 pts
     Finished: “Be on your way and talk to the Cook if you’re hungry.” (Activates Cook State 2)
+
 Kaspar
   State 1
     Finished: “Hello swabbie…”
@@ -43,22 +43,19 @@ Kaspar
             “Excellent!” +2 pts
             “Mmm, not quite. Thanks anyway.” -2 pts
     Finished: “Bye swabbie…”
-Cook
-  State 1
-    “Lil swabbie, welcome aboard! I’m the cook of this fine vessel.”
-      “Do you know anything about Bonnie?” -1 pt
-        “Oh don’t say that name. You’ll make me sad. If you want to know about her, go ask Kaspar...” (Activates Kaspar State 2)
-      “I’m hungry.”
-        “Not meal-time yet.”
-      “...”
-        “...”
-    “Maybe you can help me out with some things. I need some ingredients.”
-      Cooking minigame (win) [In this game...]
-        “Good work!” +3 pts
-    Finished: “Off you go…”
-Forced Sailor
-  State 1
-    “(Unintelligible noises)”
-      “(Unintelligible noises)” +2 pts
-      “(Unintelligible noises)” -2 pts
-    Finished: “(Unintelligible noises)”
+
+Cook:
+- “Lil swabbie, welcome aboard! I’m the cook of this fine vessel.”
+  > “I’m hungry.”
+    - “Not meal-time yet.”
+  > “...”
+    - “...”
+- “Maybe you can help me out with some things. I need some ingredients.” (Cooking minigame)
+  - “Good work!” +3 pts
+- “Off you go…”
+
+Forced Sailor:
+- “(Unintelligible noises)”
+  > “(Unintelligible noises)” +2 pts
+  > “(Unintelligible noises)” -2 pts
+- “(Unintelligible noises)”
