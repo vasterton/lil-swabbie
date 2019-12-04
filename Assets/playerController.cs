@@ -21,6 +21,10 @@ public class playerController : MonoBehaviour
     bool playingShipGame = false;
     int cannonballs = 0;
     bool attacking = false;
+    bool captainInteraction = false;
+    bool userIn = false;
+    string option = "";
+    Text dialogue;
     public GameObject s0;
     public GameObject s1;
     public GameObject s2;
@@ -225,6 +229,11 @@ public class playerController : MonoBehaviour
         }
         else if(other.CompareTag("captainsQuarters")){
             moveCamera(-12.51f, 5.42f, -14.33f,10, 20, 0);
+
+            if(!captainInteraction){
+                GameObject.FindGameObjectWithTag("captainInteraction").GetComponent<Image>().enabled = true;
+                GameObject.FindGameObjectWithTag("captainInteractionText").GetComponent<Text>().enabled = true;
+            }
         }
         else if(other.CompareTag("mainDeck")){
             moveCamera(-24, 10.31f, -23.8f,20, 15, 0);
@@ -281,6 +290,12 @@ public class playerController : MonoBehaviour
         }
         else if(other.CompareTag("bread")){
             GameObject.FindGameObjectWithTag("breadText").GetComponent<Text>().enabled = false;
+        }
+        else if(other.CompareTag("captainsQuarters")){
+            if(!captainInteraction){
+                GameObject.FindGameObjectWithTag("captainInteraction").GetComponent<Image>().enabled = false;
+                GameObject.FindGameObjectWithTag("captainInteractionText").GetComponent<Text>().enabled = false;
+            }
         }
     }
     private IEnumerator loadWin()
@@ -406,5 +421,89 @@ public class playerController : MonoBehaviour
 
         yield return new WaitForSeconds(2f);
         attacking = false;
+    }
+
+    public void captainInteract(){
+        StartCoroutine(captainConvo());
+    }
+
+    private IEnumerator captainConvo(){
+        captainInteraction = true;
+        GameObject.FindGameObjectWithTag("captainInteraction").GetComponent<Image>().enabled = false;
+        GameObject.FindGameObjectWithTag("captainInteractionText").GetComponent<Text>().enabled = false;
+        
+        GameObject.FindGameObjectWithTag("captainPane").GetComponent<Image>().enabled = true;
+        GameObject.FindGameObjectWithTag("captainPaneText").GetComponent<Text>().enabled = true;
+
+        dialogue = GameObject.FindGameObjectWithTag("captainPaneText").GetComponent<Text>();
+
+        Input.ResetInputAxes();
+        yield return StartCoroutine(WaitForKeyDown(new KeyCode[] { KeyCode.A, KeyCode.B, KeyCode.C }));
+        Debug.Log("option 1 = " + option);
+
+        switch (option) {
+            case ("A"):
+                dialogue.text = "We need enthusiasm like that!";
+                //earn points here
+                break;
+            case ("B"):
+                dialogue.text = "...";
+                break;
+            case ("C"):
+                dialogue.text = "It is an honor to serve on my ship!";
+                //lose points here
+                break;
+        }
+        dialogue.text += "\nYou will be assisting the crew members with some tasks.\n[A] - Will do!\n[B] - I'll think about it.";
+        option = "";
+
+        Input.ResetInputAxes();
+        yield return StartCoroutine(WaitForKeyDown(new KeyCode[] { KeyCode.A, KeyCode.B }));
+        Debug.Log("option 3 = " + option);
+
+        switch (option) {
+            case ("A"):
+                dialogue.text = "Good swabbie.";
+                //earn points here
+                break;
+            case ("B"):
+                dialogue.text = "That’s an order, swabbie…";
+                //lose points here
+                break;
+        }
+        dialogue.text += "\nNow go! Help out your superiors with tasks.\n[A] - (Exit)";
+
+        yield return StartCoroutine(WaitForKeyDown(new KeyCode[] { KeyCode.A }));
+
+        GameObject.FindGameObjectWithTag("captainPane").GetComponent<Image>().enabled = false;
+        GameObject.FindGameObjectWithTag("captainPaneText").GetComponent<Text>().enabled = false;
+    }
+
+    IEnumerator WaitForKeyDown(KeyCode[] codes) {
+        bool pressed = false;
+        while (!pressed) {
+            foreach (KeyCode k in codes) {
+                if (Input.GetKey(k)) {
+                    pressed = true;
+                    SetOptionTo(k);
+                    break;
+                }
+            }
+            yield return null;
+        }
+    }
+
+    private void SetOptionTo(KeyCode keyCode) {
+        switch (keyCode) {
+            case (KeyCode.A):
+                option = "A";
+                break;
+            case (KeyCode.B):
+                option = "B";
+                break;
+            case (KeyCode.C):
+                option = "C";
+                break;
+        }
     }
 }
