@@ -21,8 +21,14 @@ public class playerController : MonoBehaviour
     bool playingShipGame = false;
     int cannonballs = 0;
     bool attacking = false;
+    Text pointCounter;
+    int points = 0;
+    System.Random rand = new System.Random();
     bool captainInteraction = false;
-    bool userIn = false;
+    bool captainInteracted = false;
+    bool kasparInteraction = false;
+    bool kasparInteracted = false;
+    bool forcedInteraction = false;
     string option = "";
     Text dialogue;
     public GameObject s0;
@@ -36,12 +42,17 @@ public class playerController : MonoBehaviour
     {
         player = GetComponent<NavMeshAgent>();
         arrow = GameObject.FindGameObjectWithTag("arrow");
+
+        pointCounter = GameObject.FindGameObjectWithTag("points").GetComponent<Text>();
+        GameObject.FindGameObjectWithTag("points").GetComponent<Text>().enabled = true;
+        GameObject.FindGameObjectWithTag("time").GetComponent<Text>().enabled = true;
     }
 
     // Update is called once per frame
     void Update()
     {
         Animator animator = this.GetComponent<Animator>();
+        pointCounter.text = points.ToString();
 
         // Set destination to wherever user clicks
         if(Input.GetKeyDown(KeyCode.Mouse0) && !playingShipGame){
@@ -226,29 +237,62 @@ public class playerController : MonoBehaviour
         // Change camera position when lil swabbie moves to a different area of the ship
         if(other.CompareTag("upperDeck")){
             moveCamera(-8.17f, 11.41f, -21.76f, 20, 0, 0);
+            GameObject.FindGameObjectWithTag("leftDir").GetComponent<Text>().enabled = true;
+            GameObject.FindGameObjectWithTag("rightDir").GetComponent<Text>().enabled = false;
+        }
+        else if(other.CompareTag("kaspar")){
+            if(!kasparInteraction && !kasparInteracted){
+                GameObject.FindGameObjectWithTag("captainInteraction").GetComponent<Image>().enabled = true;
+                GameObject.FindGameObjectWithTag("captainInteractionText").GetComponent<Text>().enabled = true;
+                kasparInteraction = true;
+            }
+            GameObject.FindGameObjectWithTag("leftDir").GetComponent<Text>().enabled = true;
+            GameObject.FindGameObjectWithTag("rightDir").GetComponent<Text>().enabled = false;
+        }
+        else if(other.CompareTag("forced")){
+            if(!forcedInteraction){
+                GameObject.FindGameObjectWithTag("captainInteraction").GetComponent<Image>().enabled = true;
+                GameObject.FindGameObjectWithTag("captainInteractionText").GetComponent<Text>().enabled = true;
+                forcedInteraction = true;
+            }
+            GameObject.FindGameObjectWithTag("leftDir").GetComponent<Text>().enabled = false;
+            GameObject.FindGameObjectWithTag("rightDir").GetComponent<Text>().enabled = true;
         }
         else if(other.CompareTag("captainsQuarters")){
             moveCamera(-12.51f, 5.42f, -14.33f,10, 20, 0);
 
-            if(!captainInteraction){
+            if(!captainInteraction && !captainInteracted){
                 GameObject.FindGameObjectWithTag("captainInteraction").GetComponent<Image>().enabled = true;
                 GameObject.FindGameObjectWithTag("captainInteractionText").GetComponent<Text>().enabled = true;
+                captainInteraction = true;
             }
+            GameObject.FindGameObjectWithTag("leftDir").GetComponent<Text>().enabled = true;
+            GameObject.FindGameObjectWithTag("rightDir").GetComponent<Text>().enabled = false;
         }
         else if(other.CompareTag("mainDeck")){
             moveCamera(-24, 10.31f, -23.8f,20, 15, 0);
+            GameObject.FindGameObjectWithTag("leftDir").GetComponent<Text>().enabled = true;
+            GameObject.FindGameObjectWithTag("rightDir").GetComponent<Text>().enabled = true;
         }
         else if(!gameover && other.CompareTag("mainDeckFront")){
             moveCamera(-41.36f, 10.31f, -22.53f,20, 20, 0);
+            GameObject.FindGameObjectWithTag("leftDir").GetComponent<Text>().enabled = false;
+            GameObject.FindGameObjectWithTag("rightDir").GetComponent<Text>().enabled = true;
         }
         else if(other.CompareTag("lowerDeck")){
             moveCamera(-25.11f, 2.63f, -16.06f,10, 25, 0);
+            GameObject.FindGameObjectWithTag("leftDir").GetComponent<Text>().enabled = true;
+            GameObject.FindGameObjectWithTag("rightDir").GetComponent<Text>().enabled = true;
         }
         else if(other.CompareTag("lowerDeckFront")){
             moveCamera(-26.3f, 2.65f, -16.03f,10, -25, 0);
+            GameObject.FindGameObjectWithTag("leftDir").GetComponent<Text>().enabled = false;
+            GameObject.FindGameObjectWithTag("rightDir").GetComponent<Text>().enabled = true;
         }
         else if(other.CompareTag("galley")){
             moveCamera(-12, 2.5f, -15.71f,10, 20, 0);
+            GameObject.FindGameObjectWithTag("leftDir").GetComponent<Text>().enabled = true;
+            GameObject.FindGameObjectWithTag("rightDir").GetComponent<Text>().enabled = false;
 
             if(!cookGameStarted){
                 GameObject.FindGameObjectWithTag("cookMinigameText").GetComponent<Text>().enabled = true;
@@ -292,9 +336,24 @@ public class playerController : MonoBehaviour
             GameObject.FindGameObjectWithTag("breadText").GetComponent<Text>().enabled = false;
         }
         else if(other.CompareTag("captainsQuarters")){
-            if(!captainInteraction){
+            if(captainInteraction){
                 GameObject.FindGameObjectWithTag("captainInteraction").GetComponent<Image>().enabled = false;
                 GameObject.FindGameObjectWithTag("captainInteractionText").GetComponent<Text>().enabled = false;
+                captainInteraction = false;
+            }
+        }
+        else if(other.CompareTag("kaspar")){
+            if(kasparInteraction){
+                GameObject.FindGameObjectWithTag("captainInteraction").GetComponent<Image>().enabled = false;
+                GameObject.FindGameObjectWithTag("captainInteractionText").GetComponent<Text>().enabled = false;
+                kasparInteraction = false;
+            }
+        }
+        else if(other.CompareTag("forced")){
+            if(forcedInteraction){
+                GameObject.FindGameObjectWithTag("captainInteraction").GetComponent<Image>().enabled = false;
+                GameObject.FindGameObjectWithTag("captainInteractionText").GetComponent<Text>().enabled = false;
+                forcedInteraction = false;
             }
         }
     }
@@ -423,12 +482,19 @@ public class playerController : MonoBehaviour
         attacking = false;
     }
 
-    public void captainInteract(){
-        StartCoroutine(captainConvo());
+    public void interact(){
+        if(captainInteraction){
+            StartCoroutine(captainConvo());
+        }
+        else if(kasparInteraction){
+            StartCoroutine(kasparConvo());
+        }
+        else if(forcedInteraction){
+            StartCoroutine(forcedConvo());
+        }
     }
 
     private IEnumerator captainConvo(){
-        captainInteraction = true;
         GameObject.FindGameObjectWithTag("captainInteraction").GetComponent<Image>().enabled = false;
         GameObject.FindGameObjectWithTag("captainInteractionText").GetComponent<Text>().enabled = false;
         
@@ -437,42 +503,144 @@ public class playerController : MonoBehaviour
 
         dialogue = GameObject.FindGameObjectWithTag("captainPaneText").GetComponent<Text>();
 
+        dialogue.text = "Captain: Welcome to my ship, The Intrepid!\n"
+                        + "[A] - Glad to be aboard!\n"
+                        + "[B] - ...\n"
+                        + "[C] - Whatever.";
+
         Input.ResetInputAxes();
         yield return StartCoroutine(WaitForKeyDown(new KeyCode[] { KeyCode.A, KeyCode.B, KeyCode.C }));
-        Debug.Log("option 1 = " + option);
 
         switch (option) {
             case ("A"):
-                dialogue.text = "We need enthusiasm like that!";
-                //earn points here
+                dialogue.text = "Captain: We need enthusiasm like that!\n";
+                points += 2;
                 break;
             case ("B"):
-                dialogue.text = "...";
+                dialogue.text = "Captain:  ...\n";
                 break;
             case ("C"):
-                dialogue.text = "It is an honor to serve on my ship!";
-                //lose points here
+                dialogue.text = "Captain: It is an honor to serve on my ship!\n";
+                points -= 2;
                 break;
         }
-        dialogue.text += "\nYou will be assisting the crew members with some tasks.\n[A] - Will do!\n[B] - I'll think about it.";
+        dialogue.text += "You will be assisting the crew members with some tasks.\n"
+                        + "[A] - Will do!\n"
+                        + "[B] - I'll think about it.";
         option = "";
 
         Input.ResetInputAxes();
         yield return StartCoroutine(WaitForKeyDown(new KeyCode[] { KeyCode.A, KeyCode.B }));
-        Debug.Log("option 3 = " + option);
 
         switch (option) {
             case ("A"):
-                dialogue.text = "Good swabbie.";
-                //earn points here
+                dialogue.text = "Captain: Good swabbie.\n";
+                points += 2;
                 break;
             case ("B"):
-                dialogue.text = "That’s an order, swabbie…";
-                //lose points here
+                dialogue.text = "Captain: That’s an order, swabbie...\n";
+                points -= 2;
                 break;
         }
-        dialogue.text += "\nNow go! Help out your superiors with tasks.\n[A] - (Exit)";
+        dialogue.text += "Now go! Help out your superiors with tasks.\n"
+                        + "[A] - (Exit)";
 
+        Input.ResetInputAxes();
+        yield return StartCoroutine(WaitForKeyDown(new KeyCode[] { KeyCode.A }));
+
+        GameObject.FindGameObjectWithTag("captainPane").GetComponent<Image>().enabled = false;
+        GameObject.FindGameObjectWithTag("captainPaneText").GetComponent<Text>().enabled = false;
+        captainInteracted = true;
+    }
+
+    private IEnumerator kasparConvo(){
+        GameObject.FindGameObjectWithTag("captainInteraction").GetComponent<Image>().enabled = false;
+        GameObject.FindGameObjectWithTag("captainInteractionText").GetComponent<Text>().enabled = false;
+        
+        GameObject.FindGameObjectWithTag("captainPane").GetComponent<Image>().enabled = true;
+        GameObject.FindGameObjectWithTag("captainPaneText").GetComponent<Text>().enabled = true;
+
+        dialogue = GameObject.FindGameObjectWithTag("captainPaneText").GetComponent<Text>();
+
+        dialogue.text = "Kaspar: Hello swabbie...\n"
+                        + "[A] - Hi!\n"
+                        + "[B] - Who are you?";
+
+        Input.ResetInputAxes();
+        yield return StartCoroutine(WaitForKeyDown(new KeyCode[] { KeyCode.A, KeyCode.B }));
+
+        switch (option) {
+            case ("A"):
+                dialogue.text = "Kaspar: Welcome aboard.\n";
+                points += 2;
+                break;
+            case ("B"):
+                dialogue.text = "Kaspar: Don't you know? I'm first mate, Kaspar.\n";
+                points -= 2;
+                break;
+        }
+        dialogue.text += "You should probably go to meet the captain.\n"
+                        + "[A] - The captain?\n"
+                        + "[B] - Why?";
+        option = "";
+
+        Input.ResetInputAxes();
+        yield return StartCoroutine(WaitForKeyDown(new KeyCode[] { KeyCode.A, KeyCode.B }));
+
+        switch (option) {
+            case ("A"):
+                dialogue.text = "Kaspar: Yes... of this fine vessel, The Intrepid\n";
+                break;
+            case ("B"):
+                dialogue.text = "Kaspar: Careful. With an attitude like that, you won't make many friends...\n";
+                points -= 2;
+                break;
+        }
+        dialogue.text += "Captain is in his quarters, below this upper deck. Go meet him. Bye swabbie.\n"
+                        + "[A] - (Exit)";
+
+        Input.ResetInputAxes();
+        yield return StartCoroutine(WaitForKeyDown(new KeyCode[] { KeyCode.A }));
+
+        GameObject.FindGameObjectWithTag("captainPane").GetComponent<Image>().enabled = false;
+        GameObject.FindGameObjectWithTag("captainPaneText").GetComponent<Text>().enabled = false;
+        kasparInteracted = true;
+    }
+
+    private IEnumerator forcedConvo(){
+        GameObject.FindGameObjectWithTag("captainInteraction").GetComponent<Image>().enabled = false;
+        GameObject.FindGameObjectWithTag("captainInteractionText").GetComponent<Text>().enabled = false;
+        
+        GameObject.FindGameObjectWithTag("captainPane").GetComponent<Image>().enabled = true;
+        GameObject.FindGameObjectWithTag("captainPaneText").GetComponent<Text>().enabled = true;
+
+        dialogue = GameObject.FindGameObjectWithTag("captainPaneText").GetComponent<Text>();
+
+        dialogue.text = "???: *Unintelligible noises*\n"
+                        + "[A] - Uhhhhh...\n"
+                        + "[B] - *Unintelligible noises*";
+
+        Input.ResetInputAxes();
+        yield return StartCoroutine(WaitForKeyDown(new KeyCode[] { KeyCode.A, KeyCode.B }));
+
+        switch (option) {
+            case ("A"):
+                dialogue.text = "???: *Unintelligible noises*\n";
+                break;
+            case ("B"):
+                dialogue.text = "???: *Unintelligible noises*\n";
+                if(rand.Next(10) % 2 == 0){
+                    points += 3;
+                }
+                else{
+                    points -= 2;
+                }
+                break;
+        }
+        dialogue.text += "???: *Unintelligible noises*\n"
+                        + "[A] - (Exit)";
+
+        Input.ResetInputAxes();
         yield return StartCoroutine(WaitForKeyDown(new KeyCode[] { KeyCode.A }));
 
         GameObject.FindGameObjectWithTag("captainPane").GetComponent<Image>().enabled = false;
