@@ -24,6 +24,9 @@ public class playerController : MonoBehaviour
     Text pointCounter;
     int points = 0;
     System.Random rand = new System.Random();
+    Text timer;
+    TimeSpan t;
+    double currCountdownValue;
     bool captainInteraction = false;
     bool captainInteracted = false;
     bool kasparInteraction = false;
@@ -46,13 +49,15 @@ public class playerController : MonoBehaviour
         pointCounter = GameObject.FindGameObjectWithTag("points").GetComponent<Text>();
         GameObject.FindGameObjectWithTag("points").GetComponent<Text>().enabled = true;
         GameObject.FindGameObjectWithTag("time").GetComponent<Text>().enabled = true;
+
+        StartCoroutine(StartCountdown());
     }
 
     // Update is called once per frame
     void Update()
     {
         Animator animator = this.GetComponent<Animator>();
-        pointCounter.text = points.ToString();
+        pointCounter.text = points.ToString() + " pt(s)";
 
         // Set destination to wherever user clicks
         if(Input.GetKeyDown(KeyCode.Mouse0) && !playingShipGame){
@@ -672,6 +677,25 @@ public class playerController : MonoBehaviour
             case (KeyCode.C):
                 option = "C";
                 break;
+        }
+    }
+
+    public IEnumerator StartCountdown(double countdownValue = 200)
+    {
+        string padZero = "";
+        timer = GameObject.FindGameObjectWithTag("time").GetComponent<Text>();
+        currCountdownValue = countdownValue;
+        while (currCountdownValue > 0)
+        {
+            t = TimeSpan.FromSeconds(currCountdownValue);
+            if((currCountdownValue % 60) < 10){
+                padZero = "0";
+            } else {
+                padZero = "";
+            }
+            timer.text = (currCountdownValue / 60).ToString().Substring(0, 1) + ":" + padZero + (currCountdownValue % 60);
+            yield return new WaitForSeconds(1.0f);
+            currCountdownValue--;
         }
     }
 }
