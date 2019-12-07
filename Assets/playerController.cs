@@ -60,6 +60,7 @@ public class playerController : MonoBehaviour
         pointCounter = GameObject.FindGameObjectWithTag("points").GetComponent<Text>();
         GameObject.FindGameObjectWithTag("points").GetComponent<Text>().enabled = true;
         GameObject.FindGameObjectWithTag("time").GetComponent<Text>().enabled = true;
+        Debug.Log("TIME");
 
         StartCoroutine(StartCountdown());
     }
@@ -95,6 +96,7 @@ public class playerController : MonoBehaviour
 			    else{
 				    cameraMoving = false;
 			    }
+        }
     }
 
     void OnTriggerEnter(Collider other){
@@ -874,7 +876,7 @@ public class playerController : MonoBehaviour
         }
     }
 
-    public IEnumerator StartCountdown(double countdownValue = 17)
+    public IEnumerator StartCountdown(double countdownValue = 600)
     {
         string padZero = "";
         timer = GameObject.FindGameObjectWithTag("time").GetComponent<Text>();
