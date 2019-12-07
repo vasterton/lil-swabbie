@@ -1,61 +1,57 @@
+Kaspar:
+- "Hello swabbie..."
+  > "Hi!"
+    - "Welcome aboard." +2 pts
+  > "Who are you?"
+    - "Don't you know? I'm first mate Kaspar." -2 pts
+- "You should probably go meet the captain."
+  > "The captain?"
+    - "Yes... of this fine vessel, The Intrepid."
+  > "Why?"
+    - "Careful. With an attitude like the, you won't make many friends..." -2 pts
+- "Captain is in his quarters, below this upper deck. Go meet him. Bye swabbie."
+
 Captain:
-- “Welcome to my ship, The Intrepid!”
-  > “Glad to be aboard!”
-    - “We need enthusiasm like that!” +2 pts
-  > “...”
-    - “...”
-  > “Whatever.”
-    - “It is an honor to serve on my ship!” -2 pts
-- “You will be assisting the crew members with some tasks.”
-  > “Will do!”
-    - “Good swabbie.” +2 pts
-  > “I’ll think about it.”
-    - “That’s an order, swabbie…” -2 pts
-- “Now go! Help out your superiors with tasks.”
+- "Welcome to my ship, The Intrepid!"
+  > "Glad to be aboard!"
+    - "We need enthusiasm like that!" +2 pts
+  > "..."
+    - "..."
+  > "Whatever."
+    - "It is an honor to serve on my ship!" -2 pts
+- "You will be assisting the crew members with some tasks."
+  > "Will do!"
+    - "Good swabbie." +2 pts
+  > "I’ll think about it."
+    - "That’s an order, swabbie..." -2 pts
+- "Now go! Help out your superiors with tasks."
 
 Mario
-- “Hey there. You must be the new swabbie.”
-  > “That’s me!”
-    - “Good.” +1 pt
-  > “...”
-    - “I’m speaking to you…” -2 pts
-- “Anyways, how about you train to shoot cannons, huh?”
-  Cannon minigame (win/lose) [Aim and click in the direction of the incoming ships to stop them.]
-        “Good shot!” +3 pts
-        “Mmm, needs work.”  -3 pts
-    Finished: “Be on your way and talk to the Cook if you’re hungry.” (Activates Cook State 2)
-
-Kaspar
-  State 1
-    Finished: “Hello swabbie…”
-  State 2
-    “Hello swabbie…”
-      “The cook said you know about Bonnie.”
-        “Oh, the Cook sent you. Yep Bonnie was the Captain’s first mate. She would have replaced him one day, but she disappeared recently”
-          “What do you know?”
-            “She was last seen keeping watch a few nights ago before we picked you up at the last port. Then, the next day, we couldn’t find her.”
-          “Do you suspect foul play?”
-            “You ask too many questions…” -2 pt
-          “...”
-            “(Kaspar appreciates your silence)” +2 pt
-        “Why don’t you help me with these candles? I can’t seem to light them just right.”
-          Candle minigame (win/lose) [Click candles to light other ones up. Make sure at least one candle stays lit.]
-            “Excellent!” +2 pts
-            “Mmm, not quite. Thanks anyway.” -2 pts
-    Finished: “Bye swabbie…”
+- "Hey there. You must be the new swabbie."
+  > "That’s me!"
+    - "Good." +2 pts
+  > "..."
+    - "I’m speaking to you..." -2 pts
+- "Anyways, how about you train to shoot cannons, huh?"
+  > Win
+    - "Good shot!" +4 pts
+  > Lose
+    - "Mmm, needs work." -4 pts
+- "Be on your way and talk to the Cook below deck if you’re hungry."
 
 Cook:
-- “Lil swabbie, welcome aboard! I’m the cook of this fine vessel.”
-  > “I’m hungry.”
-    - “Not meal-time yet.”
-  > “...”
-    - “...”
-- “Maybe you can help me out with some things. I need some ingredients.” (Cooking minigame)
-  - “Good work!” +3 pts
-- “Off you go…”
+- "Lil' swabbie, welcome aboard! I’m the cook of this fine vessel."
+  > "I’m hungry."
+    - "Not meal-time yet."
+  > "..."
+    - "..."
+- "Maybe you can help me out with some things. I need some ingredients."
+  > Win
+    - “Good work!” +3 pts
+- “Off you go...”
 
 Forced Sailor:
-- “(Unintelligible noises)”
-  > “(Unintelligible noises)” +2 pts
-  > “(Unintelligible noises)” -2 pts
-- “(Unintelligible noises)”
+- "*Unintelligible noises*"
+  > "*Unintelligible noises*" ? pts
+  > "*Unintelligible noises*" ? pts
+- "*Unintelligible noises*"
