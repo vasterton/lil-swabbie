@@ -10,6 +10,7 @@ public class playerController : MonoBehaviour
 {
     NavMeshAgent player;
     GameObject arrow;
+    public Transform cameraPosition = null;
     bool gameover = false;
     bool cookGameStarted = false;
     bool fishHeld = false;
@@ -41,6 +42,7 @@ public class playerController : MonoBehaviour
     bool breadInteraction = false;
     bool returnInteraction = false;
     bool forcedInteraction = false;
+    bool cameraMoving = false;
     string option = "";
     Text dialogue;
     public GameObject s0;
@@ -85,6 +87,14 @@ public class playerController : MonoBehaviour
 
         // Enable or disable walking animation based on magnitude of velocity
         animator.SetBool("walking", player.velocity.magnitude > 0.2f);
+        if(cameraMoving){
+			    if(Camera.main.transform.position != cameraPosition.position && Camera.main.transform.rotation != cameraPosition.rotation){	
+				     Camera.main.transform.position = Vector3.Lerp(Camera.main.transform.position, cameraPosition.position, Time.deltaTime * 2);
+				     Camera.main.transform.rotation = Quaternion.Lerp(Camera.main.transform.rotation, cameraPosition.rotation, Time.deltaTime * 2);
+			    }
+			    else{
+				    cameraMoving = false;
+			    }
     }
 
     void OnTriggerEnter(Collider other){
@@ -206,8 +216,9 @@ public class playerController : MonoBehaviour
 
     private void moveCamera(float v1, float v2, float v3, float v4, float v5, float v6)
     {
-        //if we have time, it would be nice to have a smooth transition of the camera
-        Camera.main.transform.SetPositionAndRotation(new Vector3(v1, v2, v3), Quaternion.Euler(new Vector3(v4, v5, v6)));
+        cameraPosition.position = new Vector3(v1, v2, v3);
+		cameraPosition.rotation = Quaternion.Euler(new Vector3(v4, v5, v6));
+		cameraMoving = true;
     }
 
     // Hide text when lil swabbie leaves certain areas
