@@ -31,6 +31,8 @@ public class playerController : MonoBehaviour
     bool captainInteracted = false;
     bool kasparInteraction = false;
     bool kasparInteracted = false;
+    bool marioInteraction = false;
+    bool marioInteracted = false;
     bool forcedInteraction = false;
     string option = "";
     Text dialogue;
@@ -184,16 +186,6 @@ public class playerController : MonoBehaviour
             }
         }
 
-        //starts the Ship Game if space is pressed. Change this once interactions are implemented
-        if (Input.GetKeyDown(KeyCode.Space) && !playingShipGame)
-        {
-            playingShipGame = true;
-            cannonballs = 5;
-            player.ResetPath();
-            StartCoroutine(loadShipGame());
-            GetComponent<Animator>().SetBool("playingShipGame", true);
-        }
-
         if (playingShipGame && cannonballs >= 0)
         {
             if (Input.GetKeyDown(KeyCode.Return) && !attacking)
@@ -262,6 +254,13 @@ public class playerController : MonoBehaviour
             }
             GameObject.FindGameObjectWithTag("leftDir").GetComponent<Text>().enabled = false;
             GameObject.FindGameObjectWithTag("rightDir").GetComponent<Text>().enabled = true;
+        }
+        else if(other.CompareTag("mario")){
+            if(!forcedInteraction){
+                GameObject.FindGameObjectWithTag("captainInteraction").GetComponent<Image>().enabled = true;
+                GameObject.FindGameObjectWithTag("captainInteractionText").GetComponent<Text>().enabled = true;
+                marioInteraction = true;
+            }
         }
         else if(other.CompareTag("captainsQuarters")){
             moveCamera(-12.51f, 5.42f, -14.33f,10, 20, 0);
@@ -359,6 +358,13 @@ public class playerController : MonoBehaviour
                 GameObject.FindGameObjectWithTag("captainInteraction").GetComponent<Image>().enabled = false;
                 GameObject.FindGameObjectWithTag("captainInteractionText").GetComponent<Text>().enabled = false;
                 forcedInteraction = false;
+            }
+        }
+        else if(other.CompareTag("mario")){
+            if(marioInteraction){
+                GameObject.FindGameObjectWithTag("captainInteraction").GetComponent<Image>().enabled = false;
+                GameObject.FindGameObjectWithTag("captainInteractionText").GetComponent<Text>().enabled = false;
+                marioInteraction = false;
             }
         }
     }
@@ -496,6 +502,9 @@ public class playerController : MonoBehaviour
         }
         else if(forcedInteraction){
             StartCoroutine(forcedConvo());
+        }
+        else if(marioInteraction){
+            StartCoroutine(marioConvo());
         }
     }
 
@@ -650,6 +659,67 @@ public class playerController : MonoBehaviour
 
         GameObject.FindGameObjectWithTag("captainPane").GetComponent<Image>().enabled = false;
         GameObject.FindGameObjectWithTag("captainPaneText").GetComponent<Text>().enabled = false;
+    }
+
+    private IEnumerator marioConvo(){
+        GameObject.FindGameObjectWithTag("captainInteraction").GetComponent<Image>().enabled = false;
+        GameObject.FindGameObjectWithTag("captainInteractionText").GetComponent<Text>().enabled = false;
+        
+        GameObject.FindGameObjectWithTag("captainPane").GetComponent<Image>().enabled = true;
+        GameObject.FindGameObjectWithTag("captainPaneText").GetComponent<Text>().enabled = true;
+
+        dialogue = GameObject.FindGameObjectWithTag("captainPaneText").GetComponent<Text>();
+
+        dialogue.text = "Mario: Hey there. You must be the new swabbie.\n"
+                        + "[A] - That's me!\n"
+                        + "[B] - ...";
+
+        Input.ResetInputAxes();
+        yield return StartCoroutine(WaitForKeyDown(new KeyCode[] { KeyCode.A, KeyCode.B }));
+
+        switch (option) {
+            case ("A"):
+                dialogue.text = "Mario: Good.\n";
+                points += 2;
+                break;
+            case ("B"):
+                dialogue.text = "Mario: I'm speaking to you...\n";
+                points -= 2;
+                break;
+        }
+        dialogue.text += "Anyways, it's about time you learn to shoot the cannons, huh?\n"
+                        + "[A] - (Start Minigame)";
+        option = "";
+
+        Input.ResetInputAxes();
+        yield return StartCoroutine(WaitForKeyDown(new KeyCode[] { KeyCode.A }));
+
+        //CANNON MINIGAME
+        
+        if (!playingShipGame)
+        {
+            Debug.Log("START MINIGAME");
+            playingShipGame = true;
+            cannonballs = 5;
+            player.ResetPath();
+            StartCoroutine(loadShipGame());
+            GetComponent<Animator>().SetBool("playingShipGame", true);
+
+            GameObject.FindGameObjectWithTag("captainPane").GetComponent<Image>().enabled = false;
+            GameObject.FindGameObjectWithTag("captainPaneText").GetComponent<Text>().enabled = false;
+        }
+        
+        
+
+        dialogue.text += "Be on your way and talk to the Cook below deck if you're hungy.\n"
+                        + "[A] - (Exit)";
+
+        Input.ResetInputAxes();
+        yield return StartCoroutine(WaitForKeyDown(new KeyCode[] { KeyCode.A }));
+
+        GameObject.FindGameObjectWithTag("captainPane").GetComponent<Image>().enabled = false;
+        GameObject.FindGameObjectWithTag("captainPaneText").GetComponent<Text>().enabled = false;
+        marioInteracted = true;
     }
 
     IEnumerator WaitForKeyDown(KeyCode[] codes) {
