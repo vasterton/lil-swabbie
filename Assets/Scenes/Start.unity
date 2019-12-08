@@ -2291,9 +2291,11 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Left mouse button - Move
+  m_Text: 'Move - Left mouse click on Ship''s deck
 
-    E - Interact'
+    Interact - Button prompt
+
+    Dialogue - A, B, or C'
 --- !u!222 &790976396
 CanvasRenderer:
   m_ObjectHideFlags: 0

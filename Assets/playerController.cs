@@ -44,6 +44,7 @@ public class playerController : MonoBehaviour
     bool forcedInteraction = false;
     bool cameraMoving = false;
     string option = "";
+    Text interactText;
     Text dialogue;
     public GameObject s0;
     public GameObject s1;
@@ -109,8 +110,8 @@ public class playerController : MonoBehaviour
         else if(other.CompareTag("kaspar")){
             if(!kasparInteraction && !kasparInteracted){
                 GameObject.FindGameObjectWithTag("captainInteraction").GetComponent<Image>().enabled = true;
-                dialogue = GameObject.FindGameObjectWithTag("captainInteractionText").GetComponent<Text>();
-                dialogue.text = "Interact";
+                interactText = GameObject.FindGameObjectWithTag("captainInteractionText").GetComponent<Text>();
+                interactText.text = "Interact";
                 GameObject.FindGameObjectWithTag("captainInteractionText").GetComponent<Text>().enabled = true;
                 kasparInteraction = true;
             }
@@ -120,8 +121,8 @@ public class playerController : MonoBehaviour
         else if(other.CompareTag("forced")){
             if(!forcedInteraction){
                 GameObject.FindGameObjectWithTag("captainInteraction").GetComponent<Image>().enabled = true;
-                dialogue = GameObject.FindGameObjectWithTag("captainInteractionText").GetComponent<Text>();
-                dialogue.text = "Interact";
+                interactText = GameObject.FindGameObjectWithTag("captainInteractionText").GetComponent<Text>();
+                interactText.text = "Interact";
                 GameObject.FindGameObjectWithTag("captainInteractionText").GetComponent<Text>().enabled = true;
                 forcedInteraction = true;
             }
@@ -129,10 +130,10 @@ public class playerController : MonoBehaviour
             GameObject.FindGameObjectWithTag("rightDir").GetComponent<Text>().enabled = true;
         }
         else if(other.CompareTag("mario")){
-            if(!marioInteraction && !marioInteracted && !cookGameStarted){
+            if(!marioInteraction && !marioInteracted && !cookGameStarted && !playingShipGame){
                 GameObject.FindGameObjectWithTag("captainInteraction").GetComponent<Image>().enabled = true;
-                dialogue = GameObject.FindGameObjectWithTag("captainInteractionText").GetComponent<Text>();
-                dialogue.text = "Interact";
+                interactText = GameObject.FindGameObjectWithTag("captainInteractionText").GetComponent<Text>();
+                interactText.text = "Interact";
                 GameObject.FindGameObjectWithTag("captainInteractionText").GetComponent<Text>().enabled = true;
                 marioInteraction = true;
             }
@@ -142,8 +143,8 @@ public class playerController : MonoBehaviour
 
             if(!captainInteraction && !captainInteracted){
                 GameObject.FindGameObjectWithTag("captainInteraction").GetComponent<Image>().enabled = true;
-                dialogue = GameObject.FindGameObjectWithTag("captainInteractionText").GetComponent<Text>();
-                dialogue.text = "Interact";
+                interactText = GameObject.FindGameObjectWithTag("captainInteractionText").GetComponent<Text>();
+                interactText.text = "Interact";
                 GameObject.FindGameObjectWithTag("captainInteractionText").GetComponent<Text>().enabled = true;
                 captainInteraction = true;
             }
@@ -177,15 +178,15 @@ public class playerController : MonoBehaviour
 
             if(!cookInteraction && !cookInteracted){
                 GameObject.FindGameObjectWithTag("captainInteraction").GetComponent<Image>().enabled = true;
-                dialogue = GameObject.FindGameObjectWithTag("captainInteractionText").GetComponent<Text>();
-                dialogue.text = "Interact";
+                interactText = GameObject.FindGameObjectWithTag("captainInteractionText").GetComponent<Text>();
+                interactText.text = "Interact";
                 GameObject.FindGameObjectWithTag("captainInteractionText").GetComponent<Text>().enabled = true;
                 cookInteraction = true;
             }
             else if(fishHeld || cheeseHeld || breadHeld){
                 GameObject.FindGameObjectWithTag("captainInteraction").GetComponent<Image>().enabled = true;
-                dialogue = GameObject.FindGameObjectWithTag("captainInteractionText").GetComponent<Text>();
-                dialogue.text = "Return food";
+                interactText = GameObject.FindGameObjectWithTag("captainInteractionText").GetComponent<Text>();
+                interactText.text = "Return food";
                 GameObject.FindGameObjectWithTag("captainInteractionText").GetComponent<Text>().enabled = true;
                 returnInteraction = true;
             }
@@ -194,22 +195,22 @@ public class playerController : MonoBehaviour
         else if(cookGameStarted && !(fishHeld || cheeseHeld || breadHeld)){
             if(other.CompareTag("fish") && !fishReturned && !cheeseHeld && !breadHeld){
                 GameObject.FindGameObjectWithTag("captainInteraction").GetComponent<Image>().enabled = true;
-                dialogue = GameObject.FindGameObjectWithTag("captainInteractionText").GetComponent<Text>();
-                dialogue.text = "Pick Up Fish";
+                interactText = GameObject.FindGameObjectWithTag("captainInteractionText").GetComponent<Text>();
+                interactText.text = "Pick Up Fish";
                 GameObject.FindGameObjectWithTag("captainInteractionText").GetComponent<Text>().enabled = true;
                 fishInteraction = true;
             }
             else if(other.CompareTag("cheese") && !cheeseReturned && !fishHeld && !breadHeld){
                 GameObject.FindGameObjectWithTag("captainInteraction").GetComponent<Image>().enabled = true;
-                dialogue = GameObject.FindGameObjectWithTag("captainInteractionText").GetComponent<Text>();
-                dialogue.text = "Pick Up Cheese";
+                interactText = GameObject.FindGameObjectWithTag("captainInteractionText").GetComponent<Text>();
+                interactText.text = "Pick Up Cheese";
                 GameObject.FindGameObjectWithTag("captainInteractionText").GetComponent<Text>().enabled = true;
                 cheeseInteraction = true;
             }
             else if(other.CompareTag("bread") && !breadReturned && !cheeseHeld && !fishHeld){
                 GameObject.FindGameObjectWithTag("captainInteraction").GetComponent<Image>().enabled = true;
-                dialogue = GameObject.FindGameObjectWithTag("captainInteractionText").GetComponent<Text>();
-                dialogue.text = "Pick Up Bread";
+                interactText = GameObject.FindGameObjectWithTag("captainInteractionText").GetComponent<Text>();
+                interactText.text = "Pick Up Bread";
                 GameObject.FindGameObjectWithTag("captainInteractionText").GetComponent<Text>().enabled = true;
                 breadInteraction = true;
             }
@@ -414,6 +415,7 @@ public class playerController : MonoBehaviour
             }
             if (cannonballs == 0 && !attacking)
             {
+                Debug.Log("out of cannonballs?");
                 StartCoroutine(loadMainGame());
                 GetComponent<Animator>().SetBool("playingShipGame", false);
                 arrow.SetActive(false);
@@ -757,23 +759,25 @@ public class playerController : MonoBehaviour
 
         if (!playingShipGame)
         {
+            GameObject.FindGameObjectWithTag("captainPane").GetComponent<Image>().enabled = false;
+            GameObject.FindGameObjectWithTag("captainPaneText").GetComponent<Text>().enabled = false;
             playingShipGame = true;
             cannonballs = 5;
             player.ResetPath();
             StartCoroutine(loadShipGame());
             GetComponent<Animator>().SetBool("playingShipGame", true);
-
-            GameObject.FindGameObjectWithTag("captainPane").GetComponent<Image>().enabled = false;
-            GameObject.FindGameObjectWithTag("captainPaneText").GetComponent<Text>().enabled = false;
-            //playingShipGame = false;
         }
 
         while(playingShipGame){
             yield return new WaitForSeconds(0.2f);
         }
+
+        GameObject.FindGameObjectWithTag("captainPane").GetComponent<Image>().enabled = false;
+        GameObject.FindGameObjectWithTag("captainPaneText").GetComponent<Text>().enabled = false;
         
         dialogue.text = "Mario: Be on your way and talk to the Cook below deck if you're hungry.\n"
                         + "[A] - (Exit)";
+        option = "";
 
         GameObject.FindGameObjectWithTag("captainPane").GetComponent<Image>().enabled = true;
         GameObject.FindGameObjectWithTag("captainPaneText").GetComponent<Text>().enabled = true;
