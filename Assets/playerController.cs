@@ -87,14 +87,18 @@ public class playerController : MonoBehaviour
 
         // Enable or disable walking animation based on magnitude of velocity
         animator.SetBool("walking", player.velocity.magnitude > 0.2f);
-        if(cameraMoving){
-			    if(Camera.main.transform.position != cameraPosition.position && Camera.main.transform.rotation != cameraPosition.rotation){	
-				     Camera.main.transform.position = Vector3.Lerp(Camera.main.transform.position, cameraPosition.position, Time.deltaTime * 2);
-				     Camera.main.transform.rotation = Quaternion.Lerp(Camera.main.transform.rotation, cameraPosition.rotation, Time.deltaTime * 2);
-			    }
-			    else{
-				    cameraMoving = false;
-			    }
+        if (cameraMoving)
+        {
+            if (Camera.main.transform.position != cameraPosition.position && Camera.main.transform.rotation != cameraPosition.rotation)
+            {
+                Camera.main.transform.position = Vector3.Lerp(Camera.main.transform.position, cameraPosition.position, Time.deltaTime * 2);
+                Camera.main.transform.rotation = Quaternion.Lerp(Camera.main.transform.rotation, cameraPosition.rotation, Time.deltaTime * 2);
+            }
+            else
+            {
+                cameraMoving = false;
+            }
+        }
     }
 
     void OnTriggerEnter(Collider other){
