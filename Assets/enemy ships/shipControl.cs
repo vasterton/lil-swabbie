@@ -9,7 +9,7 @@ public class shipControl : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        speed = Random.Range(-.2f, .2f);
+        speed = Random.Range(-.18f, .18f);
         a = GetComponent<Animator>();
         //a.enabled = false;
     }
