@@ -176,6 +176,7 @@ public class playerController : MonoBehaviour
             moveCamera(-12, 2.5f, -15.71f,10, 20, 0);
             GameObject.FindGameObjectWithTag("leftDir").GetComponent<Text>().enabled = true;
             GameObject.FindGameObjectWithTag("rightDir").GetComponent<Text>().enabled = false;
+            //Debug.Log("this needs to work");
 
             if(!cookInteraction && !cookInteracted){
                 GameObject.FindGameObjectWithTag("captainInteraction").GetComponent<Image>().enabled = true;
@@ -183,6 +184,7 @@ public class playerController : MonoBehaviour
                 dialogue.text = "Interact";
                 GameObject.FindGameObjectWithTag("captainInteractionText").GetComponent<Text>().enabled = true;
                 cookInteraction = true;
+                Debug.Log("I need to go");
             }
             else if(fishHeld || cheeseHeld || breadHeld){
                 GameObject.FindGameObjectWithTag("captainInteraction").GetComponent<Image>().enabled = true;
@@ -190,6 +192,7 @@ public class playerController : MonoBehaviour
                 dialogue.text = "Return food";
                 GameObject.FindGameObjectWithTag("captainInteractionText").GetComponent<Text>().enabled = true;
                 returnInteraction = true;
+
             }
         }
         // If cook minigame has started, show text when lil swabbie moves near an ingredient
@@ -585,6 +588,7 @@ public class playerController : MonoBehaviour
             StartCoroutine(marioConvo());
         }
         else if(cookInteraction){
+            Debug.Log("got here");
             StartCoroutine(cookConvo());
         }
     }
@@ -793,6 +797,9 @@ public class playerController : MonoBehaviour
             yield return new WaitForSeconds(0.2f);
         }
         
+        GameObject.FindGameObjectWithTag("captainPane").GetComponent<Image>().enabled = false;
+        GameObject.FindGameObjectWithTag("captainPaneText").GetComponent<Text>().enabled = false;
+
         dialogue.text = "Mario: Be on your way and talk to the Cook below deck if you're hungry.\n"
                         + "[A] - (Exit)";
 
