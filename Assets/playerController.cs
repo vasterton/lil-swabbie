@@ -89,14 +89,17 @@ public class playerController : MonoBehaviour
 
         // Enable or disable walking animation based on magnitude of velocity
         animator.SetBool("walking", player.velocity.magnitude > 0.2f);
-        if(cameraMoving){
-			    if(Camera.main.transform.position != cameraPosition.position && Camera.main.transform.rotation != cameraPosition.rotation){	
-				     Camera.main.transform.position = Vector3.Lerp(Camera.main.transform.position, cameraPosition.position, Time.deltaTime * 2);
-				     Camera.main.transform.rotation = Quaternion.Lerp(Camera.main.transform.rotation, cameraPosition.rotation, Time.deltaTime * 2);
-			    }
-			    else{
-				    cameraMoving = false;
-			    }
+        if (cameraMoving)
+        {
+            if (Camera.main.transform.position != cameraPosition.position && Camera.main.transform.rotation != cameraPosition.rotation)
+            {
+                Camera.main.transform.position = Vector3.Lerp(Camera.main.transform.position, cameraPosition.position, Time.deltaTime * 2);
+                Camera.main.transform.rotation = Quaternion.Lerp(Camera.main.transform.rotation, cameraPosition.rotation, Time.deltaTime * 2);
+            }
+            else
+            {
+                cameraMoving = false;
+            }
         }
     }
 
@@ -175,6 +178,7 @@ public class playerController : MonoBehaviour
             moveCamera(-12, 2.5f, -15.71f,10, 20, 0);
             GameObject.FindGameObjectWithTag("leftDir").GetComponent<Text>().enabled = true;
             GameObject.FindGameObjectWithTag("rightDir").GetComponent<Text>().enabled = false;
+            //Debug.Log("this needs to work");
 
             if(!cookInteraction && !cookInteracted){
                 GameObject.FindGameObjectWithTag("captainInteraction").GetComponent<Image>().enabled = true;
@@ -182,6 +186,7 @@ public class playerController : MonoBehaviour
                 interactText.text = "Interact";
                 GameObject.FindGameObjectWithTag("captainInteractionText").GetComponent<Text>().enabled = true;
                 cookInteraction = true;
+                Debug.Log("I need to go");
             }
             else if(fishHeld || cheeseHeld || breadHeld){
                 GameObject.FindGameObjectWithTag("captainInteraction").GetComponent<Image>().enabled = true;
@@ -189,6 +194,7 @@ public class playerController : MonoBehaviour
                 interactText.text = "Return food";
                 GameObject.FindGameObjectWithTag("captainInteractionText").GetComponent<Text>().enabled = true;
                 returnInteraction = true;
+
             }
         }
         // If cook minigame has started, show text when lil swabbie moves near an ingredient
@@ -404,6 +410,8 @@ public class playerController : MonoBehaviour
                 if (arrow.transform.localScale.x < 200)
                 {
                     arrow.GetComponent<Transform>().localScale += new Vector3(0.8f, 0, 0);
+                    GameObject.FindGameObjectWithTag("FxTemporaire").GetComponent<Transform>().localScale += new Vector3(-0.000686f, 0, 0);
+                    GameObject.FindGameObjectWithTag("splash").GetComponent<Transform>().localScale += new Vector3(-0.000686f, 0, 0);
                 }
             }
             if (Input.GetKey(KeyCode.DownArrow) && !attacking)
@@ -412,6 +420,8 @@ public class playerController : MonoBehaviour
                 if(arrow.transform.localScale.x > 25)
                 {
                     arrow.transform.localScale += new Vector3(-0.8f, 0, 0);
+                    GameObject.FindGameObjectWithTag("FxTemporaire").GetComponent<Transform>().localScale += new Vector3(0.000686f, 0, 0);
+                    GameObject.FindGameObjectWithTag("splash").GetComponent<Transform>().localScale += new Vector3(0.000686f, 0, 0);
                 }
             }
             if (cannonballs == 0 && !attacking)
@@ -581,6 +591,7 @@ public class playerController : MonoBehaviour
             StartCoroutine(marioConvo());
         }
         else if(cookInteraction){
+            Debug.Log("got here");
             StartCoroutine(cookConvo());
         }
     }
@@ -765,7 +776,7 @@ public class playerController : MonoBehaviour
                 points -= 2;
                 break;
         }
-        dialogue.text += "Anyways, it's about time you learn to shoot the cannons, huh?\n"
+        dialogue.text += "Anyways, it's about time you learn to shoot the cannons, huh?\nUse the arrow keys to aim and press enter to tell me to fire. Be warned, there will be a delay.\n"
                         + "[A] - (Start Minigame)";
         option = "";
 
@@ -790,6 +801,9 @@ public class playerController : MonoBehaviour
         GameObject.FindGameObjectWithTag("captainPane").GetComponent<Image>().enabled = false;
         GameObject.FindGameObjectWithTag("captainPaneText").GetComponent<Text>().enabled = false;
         
+        GameObject.FindGameObjectWithTag("captainPane").GetComponent<Image>().enabled = false;
+        GameObject.FindGameObjectWithTag("captainPaneText").GetComponent<Text>().enabled = false;
+
         dialogue.text = "Mario: Be on your way and talk to the Cook below deck if you're hungry.\n"
                         + "[A] - (Exit)";
         option = "";
