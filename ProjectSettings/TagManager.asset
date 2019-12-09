@@ -36,6 +36,25 @@ TagManager:
   - startButtonText
   - backButtonText
   - controlsText
+  - FxTemporaire
+  - time
+  - captainInteraction
+  - captainInteractionText
+  - points
+  - leftDir
+  - loading
+  - captainPaneText
+  - HUD
+  - captainPane
+  - rightDir
+  - forced
+  - chongus
+  - kaspar
+  - katarina
+  - mario
+  - osilly
+  - arrow
+  - splash
   layers:
   - Default
   - TransparentFX

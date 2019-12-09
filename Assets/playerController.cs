@@ -90,13 +90,13 @@ public class playerController : MonoBehaviour
         // Enable or disable walking animation based on magnitude of velocity
         animator.SetBool("walking", player.velocity.magnitude > 0.2f);
         if(cameraMoving){
-			    if(Camera.main.transform.position != cameraPosition.position && Camera.main.transform.rotation != cameraPosition.rotation){	
-				     Camera.main.transform.position = Vector3.Lerp(Camera.main.transform.position, cameraPosition.position, Time.deltaTime * 2);
-				     Camera.main.transform.rotation = Quaternion.Lerp(Camera.main.transform.rotation, cameraPosition.rotation, Time.deltaTime * 2);
-			    }
-			    else{
-				    cameraMoving = false;
-			    }
+			if(Camera.main.transform.position != cameraPosition.position && Camera.main.transform.rotation != cameraPosition.rotation){	
+			     Camera.main.transform.position = Vector3.Lerp(Camera.main.transform.position, cameraPosition.position, Time.deltaTime * 2);
+			     Camera.main.transform.rotation = Quaternion.Lerp(Camera.main.transform.rotation, cameraPosition.rotation, Time.deltaTime * 2);
+			}
+			else{
+			    cameraMoving = false;
+			}
         }
     }
 
@@ -335,6 +335,7 @@ public class playerController : MonoBehaviour
         pirate.transform.SetPositionAndRotation(new Vector3(-32.2f, 2.8f, -13.5f), Quaternion.Euler(new Vector3(0, -102.5f, 0)));
         pirate = GameObject.FindGameObjectWithTag("chongus");
         pirate.transform.SetPositionAndRotation(new Vector3(-43.7f, 4.6f, -12.4f), Quaternion.Euler(new Vector3(0, -104, 0)));
+        pirate.GetComponent<Animator>().SetBool("lose", true);
         //set his "no" animation?
         pirate = GameObject.FindGameObjectWithTag("mario");
         pirate.transform.SetPositionAndRotation(new Vector3(-40.4f, 4.2f, -12.8f), Quaternion.Euler(new Vector3(0, 268.5f, 0)));
@@ -400,9 +401,11 @@ public class playerController : MonoBehaviour
             if (Input.GetKey(KeyCode.UpArrow) && !attacking)
             {
                 //move crosshair
-                if (arrow.transform.localScale.x < 200)
+                if (arrow.transform.localScale.x < 200f)
                 {
                     arrow.GetComponent<Transform>().localScale += new Vector3(0.8f, 0, 0);
+                    GameObject.FindGameObjectWithTag("FxTemporaire").GetComponent<Transform>().localScale += new Vector3(-0.000686f, 0, 0);
+                    GameObject.FindGameObjectWithTag("splash").GetComponent<Transform>().localScale += new Vector3(-0.000686f, 0, 0);
                 }
             }
             if (Input.GetKey(KeyCode.DownArrow) && !attacking)
@@ -411,11 +414,12 @@ public class playerController : MonoBehaviour
                 if(arrow.transform.localScale.x > 25)
                 {
                     arrow.transform.localScale += new Vector3(-0.8f, 0, 0);
+                    GameObject.FindGameObjectWithTag("FxTemporaire").GetComponent<Transform>().localScale += new Vector3(0.000686f, 0, 0);
+                    GameObject.FindGameObjectWithTag("splash").GetComponent<Transform>().localScale += new Vector3(0.000686f, 0, 0);
                 }
             }
             if (cannonballs == 0 && !attacking)
             {
-                Debug.Log("out of cannonballs?");
                 StartCoroutine(loadMainGame());
                 GetComponent<Animator>().SetBool("playingShipGame", false);
                 arrow.SetActive(false);
@@ -431,6 +435,7 @@ public class playerController : MonoBehaviour
         GameObject.FindWithTag("loading").GetComponent<Animator>().SetBool("animateOut", true);
         yield return new WaitForSeconds(1f);
         playingShipGame = false;
+        GameObject.FindGameObjectWithTag("mario").GetComponent<Animator>().SetBool("cookwin", true);
         GameObject.FindWithTag("loading").GetComponent<Animator>().SetBool("animateOut", false);
         this.GetComponent<Transform>().position = new Vector3(-29.52219f, 3.624516f, -14.07293f);
         this.GetComponent<Transform>().rotation = Quaternion.Euler(new Vector3(0, -238.542f, 0));
@@ -440,6 +445,8 @@ public class playerController : MonoBehaviour
 
     private IEnumerator fireCannon()
     {
+        GameObject hit = GameObject.FindGameObjectWithTag("FxTemporaire");
+
         attacking = true;
         GetComponent<Animator>().SetBool("attack", true);
         yield return new WaitForSeconds(3f);
@@ -449,26 +456,40 @@ public class playerController : MonoBehaviour
         {
             s0.GetComponent<Animator>().SetBool("shot", true);
             points += 1;
+            hit.GetComponent<ParticleSystem>().Play();
+            //earn points here
         }
-        if (s1.GetComponent<Animator>().GetBool("targeted"))
+        else if (s1.GetComponent<Animator>().GetBool("targeted"))
         {
             s1.GetComponent<Animator>().SetBool("shot", true);
             points += 1;
+            hit.GetComponent<ParticleSystem>().Play();
+            //earn points here
         }
-        if (s2.GetComponent<Animator>().GetBool("targeted"))
+        else if (s2.GetComponent<Animator>().GetBool("targeted"))
         {
             s2.GetComponent<Animator>().SetBool("shot", true);
             points += 1;
+            hit.GetComponent<ParticleSystem>().Play();
+            //earn points here
         }
-        if (s3.GetComponent<Animator>().GetBool("targeted"))
+        else if (s3.GetComponent<Animator>().GetBool("targeted"))
         {
             s3.GetComponent<Animator>().SetBool("shot", true);
             points += 1;
+            hit.GetComponent<ParticleSystem>().Play();
+            //earn points here
         }
-        if (s4.GetComponent<Animator>().GetBool("targeted"))
+        else if (s4.GetComponent<Animator>().GetBool("targeted"))
         {
             s4.GetComponent<Animator>().SetBool("shot", true);
             points += 1;
+            hit.GetComponent<ParticleSystem>().Play();
+            //earn points here
+        }
+        else {
+            GameObject.FindGameObjectWithTag("splash").GetComponent<ParticleSystem>().Play();
+            points -= 1;
         }
         cannonballs--;
 
@@ -750,7 +771,7 @@ public class playerController : MonoBehaviour
                 points -= 2;
                 break;
         }
-        dialogue.text += "Anyways, it's about time you learn to shoot the cannons, huh?\n"
+        dialogue.text += "Anyways, it's about time you learn to shoot the cannons, huh?\nUse the arrow keys to aim and Enter to tell me to fire. Be warned there will be a delay!\n"
                         + "[A] - (Start Minigame)";
         option = "";
 
@@ -880,7 +901,7 @@ public class playerController : MonoBehaviour
         }
     }
 
-    public IEnumerator StartCountdown(double countdownValue = 600)
+    public IEnumerator StartCountdown(double countdownValue = 300)
     {
         string padZero = "";
         timer = GameObject.FindGameObjectWithTag("time").GetComponent<Text>();
